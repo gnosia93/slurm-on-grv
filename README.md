@@ -13,3 +13,4 @@
 * [Quick Start Guide](https://slurm.schedmd.com/quickstart.html)
 * [MPI - Message Passsing Interface](https://operatingsystems.tistory.com/entry/High-Performance-Computing-MPI)
 * https://www.mpich.org/
+* https://github.com/SchedMD/slurm
