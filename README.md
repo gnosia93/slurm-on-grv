@@ -21,6 +21,9 @@
     * Ubuntu 23.04
     * Ubuntu 24.04
 
+* [slurm install](https://slurm.schedmd.com/quickstart_admin.html)
+
+
 ## 레퍼런스 ##
 
 * [Slurm이란?](https://haawron.tistory.com/33)
