@@ -27,7 +27,7 @@
 ## install ##
 
 * https://southgreenplatform.github.io/trainings/hpc/slurminstallation/
-
+* https://slurm.schedmd.com/related_software.html
 
 ## pytorch training ##
 
