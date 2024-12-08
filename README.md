@@ -6,7 +6,8 @@
   - gather
   - all gather ( = boradcasts from all nodes ) 
 
-* [Platform](https://slurm.schedmd.com/platforms.html) 
+* [Platform](https://slurm.schedmd.com/platforms.html)
+  
 Linux — Slurm has been thoroughly tested on most popular Linux distributions using arm64 (aarch64), ppc64, and x86_64 architectures. Some features are limited to recent releases and newer Linux kernel versions. Currently supported distributions include:
 
   * Debian 11 (Bullseye)
