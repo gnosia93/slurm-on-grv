@@ -31,3 +31,4 @@
 * [MPI - Message Passsing Interface](https://operatingsystems.tistory.com/entry/High-Performance-Computing-MPI)
 * https://www.mpich.org/
 * https://github.com/SchedMD/slurm
+* [InfiniBand 네트워크란 무엇이며 이더넷과의 차이점은 무엇입니까?](https://www.fibermall.com/ko/blog/what-is-infiniband-network-and-difference-with-ethernet.htm?srsltid=AfmBOooeeBTgNuYVguzE3U578_nWNXGrwKIhCiw7z9X8-2-2h3aZVXra)
