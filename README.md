@@ -1,6 +1,10 @@
 # slurm_on_aws
 
-
+* MPI 
+  - broadcast
+  - scatter
+  - gather
+  - all gather ( = boradcasts from all nodes ) 
 
 
 ## 레퍼런스 ##
