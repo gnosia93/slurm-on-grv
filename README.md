@@ -24,6 +24,11 @@
 * [slurm install](https://slurm.schedmd.com/quickstart_admin.html)
 
 
+## pytorch training ##
+
+* [Multi-node-training on slurm with PyTorch](https://gist.github.com/TengdaHan/1dd10d335c7ca6f13810fff41e809904)
+
+
 ## 레퍼런스 ##
 
 * [Slurm이란?](https://haawron.tistory.com/33)
