@@ -29,7 +29,7 @@
 * https://southgreenplatform.github.io/trainings/hpc/slurminstallation/
 * https://slurm.schedmd.com/related_software.html
 * [DeepsOps](https://www.itmaya.co.kr/wboard/view.php?wb=tech&idx=23)
-
+* https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/java-performance-on-neoverse-n1
 
 
 
