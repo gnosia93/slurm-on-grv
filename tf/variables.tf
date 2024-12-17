@@ -21,7 +21,7 @@ variable "github_webhook_ips" {
 
 
 locals {
-  cluster_name = "eks-grv-mig"
+  cluster_name = "slurm-on-aws"
   all_ingress_ciders = tolist(setunion([var.your_ip_cidr], var.github_webhook_ips))
 }
 
