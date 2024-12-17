@@ -1,5 +1,7 @@
 # slurm_on_aws
 
+* https://research-computing.git-pages.rit.edu/docs/slurm_quick_start_tutorial.html#1---getting-started-with-slurm
+
 * MPI 
   - broadcast
   - scatter
