@@ -32,7 +32,7 @@ module "ec2_instance_arm" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
   for_each = toset(["master", "worker1", "worker2", "worker3"])
-  name = "slurm-${each.key}"
+  name = "sla-${each.key}"
 
   instance_type          = "c6g.2xlarge"
   ami                    = data.aws_ami.ubuntu-arm.id
