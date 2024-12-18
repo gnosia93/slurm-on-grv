@@ -8,15 +8,6 @@ data "aws_vpc" "main" {
   id = module.vpc.vpc_id
 }
 
-output "vpc_id" {
-  value = data.aws_vpc.main.id
-}
-
-output "vpc_cidr_block" {
-  value = module.vpc.vpc_cidr_block
-}
-
-
 resource "aws_eip" "nat" {
   count = 1
   domain = "vpc"
