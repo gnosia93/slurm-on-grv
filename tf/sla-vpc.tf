@@ -32,7 +32,7 @@ module "vpc" {
   private_subnets = ["10.0.0.0/22", "10.0.4.0/22"]
   public_subnets  = ["10.0.100.0/22", "10.0.104.0/22"]
 
-  enable_nat_gateway  = true
+  enable_nat_gateway  = false
   single_nat_gateway  = true
   reuse_nat_ips       = true                    # <= Skip creation of EIPs for the NAT Gateways
   external_nat_ip_ids = "${aws_eip.nat.*.id}"   # <= IPs specified here as input to the module
@@ -42,19 +42,13 @@ module "vpc" {
   
 
   public_subnet_tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
-    "kubernetes.io/role/elb"                      = "1"
   }
 
   private_subnet_tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
-    "kubernetes.io/role/internal-elb"             = "1"
   }
 
   tags = {
     Terraform = "true"
-    Environment = "dev"
   }
 }
 
-# https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest
