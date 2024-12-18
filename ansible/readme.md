@@ -16,7 +16,7 @@ $ ansible-playbook playbook.yml -i ansible_hosts --user ubuntu --key-file ~/aws-
 ```
 
 
-## Configuration Findings ##
+## Ansible Configuration Findings ##
 
 * Create user with option --disabled-password by Ansible
   * https://stackoverflow.com/questions/39013796/create-user-with-option-disabled-password-by-ansible
