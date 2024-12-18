@@ -3,18 +3,28 @@
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/slurm-ws-arch.png)
 
 
-### Accelerated Gravition EC2 Price ##
-![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/accelrated-ec2.png)
 
-## install ##
 
+## Get Started ##
+
+#### install ####
 * https://github.com/lopentusska/slurm_ubuntu_gpu_cluster
 * https://github.com/nateGeorge/slurm_gpu_ubuntu?tab=readme-ov-file
-  
-## tutorials ##
+
+#### tutorial ####  
 * https://research-computing.git-pages.rit.edu/docs/slurm_quick_start_tutorial.html#1---getting-started-with-slurm
 * https://www.arch.jhu.edu/short-tutorial-how-to-create-a-slurm-script/
 * https://www.uibk.ac.at/zid/systeme/hpc-systeme/common/tutorials/slurm-tutorial.html
+
+
+
+
+
+
+#### Accelerated Gravition EC2 Price ####
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/accelrated-ec2.png)
+
+
 
 
 ## 기타 ##
