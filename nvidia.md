@@ -73,6 +73,11 @@ source ~/.bashrc
 sudo nvidia-smi
 ```
 
+*** https://www.nvidia.com/en-us/drivers/
+```
+https://us.download.nvidia.com/tesla/565.57.01/nvidia-driver-local-repo-ubuntu2404-565.57.01_1.0-1_arm64.deb
+```
+
 
 
 ## reference ##
