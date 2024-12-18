@@ -1,3 +1,14 @@
+- name: Ensure group "docker" exists with correct gid
+  ansible.builtin.group:
+    name: munge
+    state: present
+    gid: 1111
+
+- name: Ensure group "docker" exists with correct gid
+  ansible.builtin.group:
+    name: slurm
+    state: present
+    gid: 1121
 
 - name: Create password locked user
   ansible.builtin.user:
@@ -11,7 +22,7 @@
 - name: Create password locked user
   ansible.builtin.user:
     name: slurm
-    uid: 1111
+    uid: 1121
     comment: ""
     group: slurm
     state: present
