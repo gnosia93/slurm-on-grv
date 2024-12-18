@@ -1,10 +1,10 @@
-- name: Ensure group "docker" exists with correct gid
+- name: make munge group
   ansible.builtin.group:
     name: munge
     state: present
     gid: 1111
 
-- name: Ensure group "docker" exists with correct gid
+- name: make slurm group
   ansible.builtin.group:
     name: slurm
     state: present
