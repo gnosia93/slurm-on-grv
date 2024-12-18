@@ -7,6 +7,15 @@
 
 ## Get Started ##
 
+* [1. 클러스터 설치하기](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/1.provison.md)
+
+
+
+
+
+
+
+----
 #### install ####
 * https://github.com/lopentusska/slurm_ubuntu_gpu_cluster
 * https://github.com/nateGeorge/slurm_gpu_ubuntu?tab=readme-ov-file
