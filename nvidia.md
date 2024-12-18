@@ -18,6 +18,16 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/cu
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 ```
 
+```
+sudo apt-get update
+
+sudo apt-get install cuda-toolkit
+
+sudo apt-get install nvidia-gds
+
+sudo reboot
+```
+
 ## reference ##
 
 * https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
