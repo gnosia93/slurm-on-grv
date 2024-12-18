@@ -11,6 +11,8 @@ The G5g instances are also a cost-effective platform for machine learning infere
 cat /etc/os-release
 
 uname -m
+
+sudo lshw -C display
 ```
 
 ## cuda driver install instruction ##
