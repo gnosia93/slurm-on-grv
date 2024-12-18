@@ -1,9 +1,18 @@
 
 - name: Create password locked user
-  user:
+  ansible.builtin.user:
     name: munge
     uid: 1111
     comment: ""
     group: munge
+    state: present
+    password_lock: yes
+
+- name: Create password locked user
+  ansible.builtin.user:
+    name: slurm
+    uid: 1111
+    comment: ""
+    group: slurm
     state: present
     password_lock: yes
