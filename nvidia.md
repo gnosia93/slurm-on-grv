@@ -21,6 +21,7 @@ sudo lshw -C display
   https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/3bf863cc.pub
 
 ### apt-get ##
+
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/cuda-keyring_1.1-1_all.deb && \
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
@@ -42,8 +43,35 @@ sudo apt-get update
 sudo apt-get -y install cuda
 ```
 
+```
+sudo dpkg --install cuda-repo-ubuntu-20.04.1.sbsa.deb
+sudo apt-key del 7fa2af80
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo add-apt-repository contrib
+sudo apt-get update
+sudo apt-get -y install cuda
+```
 
 
+* https://hostkey.com/documentation/technical/gpu/nvidia_gpu_linux/#system-preparation
+```
+
+sudo apt install -y gcc
+
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt update
+sudo apt install cuda -y
+
+
+echo 'export PATH="/sbin:/bin:/usr/sbin:/usr/bin:${PATH}:/usr/local/cuda/bin"' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}' >> ~/.bashrc
+source ~/.bashrc
+
+sudo nvidia-smi
+```
 
 
 
