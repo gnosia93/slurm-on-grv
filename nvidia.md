@@ -28,9 +28,9 @@ sudo dpkg -i cuda-keyring_1.1-1_all.deb
 ```
 sudo apt-get update
 
-sudo apt-get install cuda-toolkit
+sudo apt-get install -y cuda-toolkit
 
-sudo apt-get install nvidia-gds
+sudo apt-get install -y nvidia-gds
 
 sudo reboot
 ```
