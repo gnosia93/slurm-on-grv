@@ -22,6 +22,7 @@
         comment: ""
         group: munge
         state: present
+        password: *           # login without password
     - name: Create password locked user
       ansible.builtin.user:
         name: slurm
@@ -29,3 +30,5 @@
         comment: ""
         group: slurm
         state: present
+        password: *            # login without password
+
