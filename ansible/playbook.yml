@@ -22,7 +22,6 @@
         comment: ""
         group: munge
         state: present
-        password_lock: yes
     - name: Create password locked user
       ansible.builtin.user:
         name: slurm
@@ -30,4 +29,3 @@
         comment: ""
         group: slurm
         state: present
-        password_lock: yes
