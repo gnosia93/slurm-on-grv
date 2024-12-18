@@ -1,4 +1,4 @@
-data "aws_subnet_ids" "subnet" {
+data "aws_subnet_ids" "slurm_subnet" {
   vpc_id = module.vpc.vpc_id
 }
 
@@ -34,10 +34,10 @@ module "efs" {
   # Mount targets / security group
   mount_targets = {
     "ap-northeast-2" = {
-      subnet_id = data.aws_subnet_ids.subnet[0].id
+      subnet_id = data.aws_subnet_ids.slurm_subnet[0].id
     }
     "ap-northeast-2" = {
-      subnet_id = data.aws_subnet_ids.subnet[1].id
+      subnet_id = data.aws_subnet_ids.slurm_subnet[1].id
     }
   }
   
