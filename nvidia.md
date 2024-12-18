@@ -14,11 +14,11 @@ uname -m
 ```
 
 ## cuda driver install instruction ##
-### for dnf ###
+### dnf ###
 * The new GPG public key for the CUDA repository
   https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/3bf863cc.pub
 
-### for apt-get ##
+### apt-get ##
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/cuda-keyring_1.1-1_all.deb && \
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
