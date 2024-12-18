@@ -3,7 +3,8 @@
 ## install ##
 
 * https://github.com/lopentusska/slurm_ubuntu_gpu_cluster
-
+* https://github.com/nateGeorge/slurm_gpu_ubuntu?tab=readme-ov-file
+  
 ## tutorials ##
 * https://research-computing.git-pages.rit.edu/docs/slurm_quick_start_tutorial.html#1---getting-started-with-slurm
 * https://www.arch.jhu.edu/short-tutorial-how-to-create-a-slurm-script/
