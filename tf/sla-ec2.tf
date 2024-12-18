@@ -107,11 +107,11 @@ _DATA
   }
 }
 
-output "slurm_master" {
+output "master" {
   value = [for instance in module.slurm-master : instance.public_ip]
 }
 
-output "slurm_workers" {
+output "workers" {
   value = [for instance in module.slurm-worker : instance.public_ip]
 }
 
