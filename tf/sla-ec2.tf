@@ -28,13 +28,13 @@ data "aws_ami" "ubuntu-x86" {
   }
 }
 
-module "ec2_instance_arm" {
+module "slurm-woker" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  for_each = toset(["master", "worker1", "worker2", "worker3"])
+  for_each = toset(["w1", "w2", "w3"])
   name = "sla-${each.key}"
 
-  instance_type          = "c6g.2xlarge"
+  instance_type          = "G5g.xlarge"
   ami                    = data.aws_ami.ubuntu-arm.id
   key_name               = var.key_pair
   monitoring             = true
@@ -67,7 +67,7 @@ _DATA
 }
 
 output "ec2_global_ips" {
-  value = [for instance in aws_instance.main : instance.public_ip]
+  value = [for instance in module.ec2_instance_arm : instance.public_ip]
 }
 
 
