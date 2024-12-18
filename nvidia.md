@@ -32,6 +32,21 @@ sudo apt-get install -y nvidia-gds
 sudo reboot
 ```
 
+```
+sudo dpkg --install cuda-repo-<distro>-<version>.<architecture>.deb
+sudo apt-key del 7fa2af80
+wget https://developer.download.nvidia.com/compute/cuda/repos/<distro>/<arch>/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo add-apt-repository contrib
+sudo apt-get update
+sudo apt-get -y install cuda
+```
+
+
+
+
+
+
 ## reference ##
 
 * https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
