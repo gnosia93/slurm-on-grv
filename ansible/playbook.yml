@@ -1,1 +1,9 @@
 
+- name: Create password locked user
+  user:
+    name: munge
+    uid: 1111
+    comment: ""
+    group: munge
+    state: present
+    password_lock: yes
