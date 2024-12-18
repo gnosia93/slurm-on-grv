@@ -1,6 +1,8 @@
-
-- name: Create User and group
-  hosts: workers
+# https://www.baeldung.com/linux/ansible-add-user-password-group
+- name: create munge and slurm user
+  hosts:
+    - master
+    - workers
   become: yes
   tasks:
     - name: make munge group
