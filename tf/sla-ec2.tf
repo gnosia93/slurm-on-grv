@@ -29,6 +29,22 @@ data "aws_ami" "ubuntu-x86" {
 }
 
 
+data "aws_ami" "ubuntu-arm64-nvidia" {
+  most_recent = true
+  owners      = ["898082745236"]
+
+  filter {
+    name   = "name"
+    values = ["Deep Learning ARM64 Base OSS Nvidia Driver GPU AMI (Ubuntu 22.04)*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+
 
 module "slurm-master" {
   source  = "terraform-aws-modules/ec2-instance/aws"
@@ -76,7 +92,7 @@ module "slurm-worker" {
   name = "slx-${each.key}"
 
   instance_type          = "g5g.xlarge"
-  ami                    = data.aws_ami.ubuntu-arm.id
+  ami                    = data.aws_ami.ubuntu-arm64-nvidia.id
   key_name               = var.key_pair
   monitoring             = true
   vpc_security_group_ids = [module.ec2_sg.security_group_id]
