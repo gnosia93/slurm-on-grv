@@ -13,7 +13,6 @@ module "ec2_sg" {
       to_port     = 22
       protocol    = "tcp"
       cidr_blocks = module.vpc.vpc_cidr_block
-      description = "docker for remote access"
     },
     {
       from_port   = 8080
