@@ -21,5 +21,5 @@ sudo apt install -y libssl-dev
 
 cd efs-utils
 ./build-deb.sh
-sudo apt install ./build/amazon-efs-utils*deb
+sudo apt install -y ./build/amazon-efs-utils*deb
 ```
