@@ -21,7 +21,7 @@ module "lustre_persist" {
     root_squash = "365534:65534"
   }
 
-  storage_capacity              = 30
+  storage_capacity              = 1200
   storage_type                  = "HDD"
   subnet_ids                    = [ module.vpc.public_subnets[1] ]
 
