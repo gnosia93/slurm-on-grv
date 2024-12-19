@@ -17,6 +17,8 @@ sudo apt install -y make
 sudo apt install -y binutils
 sudo apt install -y cargo
 sudo apt install -y pkg-config
+sudo apt install -y libssl-dev
+
 cd efs-utils
 ./build-deb.sh
 sudo apt install ./build/amazon-efs-utils*deb
