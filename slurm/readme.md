@@ -9,22 +9,22 @@
 
 * Install MUNGE for authentication. Make sure that all nodes in your cluster have the same munge.key. Make sure the MUNGE daemon, munged, is started before you start the Slurm daemons.
     * Install munge on the master:
-    ```
-    sudo apt-get install libmunge-dev libmunge2 munge -y
-    sudo systemctl enable munge
-    sudo systemctl start munge
-    
-    sudo cp /etc/munge/munge.key /storage/            # /storage is nfs mount path
-    sudo chown munge /storage/munge.key
-    sudo chmod 400 /storage/munge.key
-    ```
+        ```
+        sudo apt-get install libmunge-dev libmunge2 munge -y
+        sudo systemctl enable munge
+        sudo systemctl start munge
+        
+        sudo cp /etc/munge/munge.key /storage/            # /storage is nfs mount path
+        sudo chown munge /storage/munge.key
+        sudo chmod 400 /storage/munge.key
+        ```
     * Install munge on worker nodes:
-    ```
-    sudo apt-get install libmunge-dev libmunge2 munge
-    sudo cp /storage/munge.key /etc/munge/munge.key
-    sudo systemctl enable munge
-    sudo systemctl start munge
-    ```
+        ```
+        sudo apt-get install libmunge-dev libmunge2 munge
+        sudo cp /storage/munge.key /etc/munge/munge.key
+        sudo systemctl enable munge
+        sudo systemctl start munge
+        ```
   
 * Install Slurm using one of the following methods:
   * Build Manually from source (for developers or advanced users)
