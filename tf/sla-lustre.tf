@@ -15,15 +15,15 @@ module "lustre_persist" {
     level = "ERROR_ONLY"
   }
 
-  per_unit_storage_throughput = 50
+  per_unit_storage_throughput = 12
 
   root_squash_configuration = {
     root_squash = "365534:65534"
   }
 
-  storage_capacity              = 1200
-  storage_type                  = "SSD"
-  subnet_ids                    = ["subnet-abcde012"]
+  storage_capacity              = 30
+  storage_type                  = "HDD"
+  subnet_ids                    = [ module.vpc.public_subnets[1].id ]
 
   # Data Repository Association(s)
 /*
