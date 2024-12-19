@@ -56,11 +56,10 @@
           group: munge
           mode: "0400"
           remote_src: true
-
- - name: install munge on cluster workers   
-   hosts: workers
-   become: yes
-   tasks:
+- name: install munge on cluster workers   
+  hosts: workers
+  become: yes
+  tasks:
       - name: install
         ansible.builtin.apt:
           pkg:
