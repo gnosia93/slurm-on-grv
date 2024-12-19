@@ -35,8 +35,8 @@
 - name: install munge
   become: yes
   tasks:
-    block:
     hosts: master
+    block:
       - name: master install
         ansible.builtin.apt:
           pkg:
