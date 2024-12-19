@@ -33,29 +33,30 @@
         password: ''             # login without password with '' or passwd -d slurm at tty
 
 - name: install munge
-  hosts: master
   become: yes
   tasks:
-    - name: master install
-      ansible.builtin.apt:
-        pkg:
-        - libmunge-dev 
-        - libmunge2 
-        - munge
-        state: present
-    - name: Enable service munge
-      ansible.builtin.systemd_service:
-        name: munge
-        state: started
-        enabled: true
-    - name: copy munge.key to /mnt/efs
-#      become: yes
-      ansible.builtin.copy:
-        src: /etc/munge/munge.key
-        dest: /mnt/efs
-        owner: munge
-        group: munge
-        mode: "0400"
-        remote_src: true
+    block:
+    hosts: master
+      - name: master install
+        ansible.builtin.apt:
+          pkg:
+          - libmunge-dev 
+          - libmunge2 
+          - munge
+          state: present
+      - name: Enable service munge
+        ansible.builtin.systemd_service:
+          name: munge
+          state: started
+          enabled: true
+      - name: copy munge.key to /mnt/efs
+  #      become: yes
+        ansible.builtin.copy:
+          src: /etc/munge/munge.key
+          dest: /mnt/efs
+          owner: munge
+          group: munge
+          mode: "0400"
+          remote_src: true
 
     
