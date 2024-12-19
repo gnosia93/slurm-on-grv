@@ -2,7 +2,7 @@
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/slurm-ws-arch.png)
 
-
+This workshop explains about how to use AWS graviton EC2 instnaces for pytorch distributed training with slurm.
 
 
 ## Get Started ##
