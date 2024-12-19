@@ -49,7 +49,7 @@ module "slurm-master" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
   for_each = toset(["mst"])
-  name = "slurm-${each.key}"
+  name = "sl-${each.key}"
 
   instance_type          = "c6g.xlarge"
   ami                    = data.aws_ami.ubuntu-arm.id
