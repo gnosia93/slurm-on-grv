@@ -10,7 +10,7 @@
 * execute following commands in each node
   ```
   sudo apt install -y build-essential fakeroot devscripts equivs
-  curl https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2
+  curl https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2 -o slurm-24.11.0.tar.bz2
   tar -xaf slurm-24.11.0.tar.bz2
   cd slurm-24.11.0
   mk-build-deps -i debian/control
