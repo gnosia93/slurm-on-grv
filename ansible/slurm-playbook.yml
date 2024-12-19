@@ -32,7 +32,7 @@
         state: present
         password: ''             # login without password with '' or passwd -d slurm at tty
 
-- name: install munge on cluster 
+- name: install munge on cluster master
   hosts: master
   become: yes
   tasks:
@@ -59,4 +59,29 @@
             mode: "0400"
             remote_src: true
 
-    
+ - name: install munge on cluster workers   
+   hosts: workers
+   become: yes
+   tasks:
+      - name: install
+        ansible.builtin.apt:
+          pkg:
+          - libmunge-dev 
+          - libmunge2 
+          - munge
+          state: present
+      - name: copy munge.key from /mnt/efs
+          ansible.builtin.copy:
+            src:  /mnt/efs/munge.key
+            dest: /etc/munge/munge.key
+            owner: munge
+            group: munge
+            mode: "0400"
+            remote_src: true
+       - name: enable service
+          ansible.builtin.systemd_service:
+            name: munge
+            state: started
+            enabled: true
+   
+        
