@@ -2,7 +2,7 @@ provider "aws" {
   region = "ap-northeast-2"
 }
 
-
+/*
 terraform {
   required_providers {
 
@@ -11,7 +11,7 @@ terraform {
   }
  }
 }
-
+*/
 
 variable "key_pair" {
     type = string
