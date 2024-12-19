@@ -18,13 +18,14 @@
 
 
 ## Slurm Tutorial ##  
+
 * https://research-computing.git-pages.rit.edu/docs/slurm_quick_start_tutorial.html#1---getting-started-with-slurm
 * https://www.arch.jhu.edu/short-tutorial-how-to-create-a-slurm-script/
 * https://www.uibk.ac.at/zid/systeme/hpc-systeme/common/tutorials/slurm-tutorial.html
 
 
-## 레퍼런스 ##
 
-* [DeepsOps](https://www.itmaya.co.kr/wboard/view.php?wb=tech&idx=23)
+
+
 
 
