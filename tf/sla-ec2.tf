@@ -86,6 +86,8 @@ git clone https://github.com/aws/efs-utils
 cd efs-utils
 ./build-deb.sh
 sudo apt install -y ./build/amazon-efs-utils*deb
+sudo mkdir /mnt/efs
+sudo chmod 0777 /mnt/efs
 _DATA
 
   tags = {
@@ -143,6 +145,8 @@ git clone https://github.com/aws/efs-utils
 cd efs-utils
 ./build-deb.sh
 sudo apt install -y ./build/amazon-efs-utils*deb
+sudo mkdir /mnt/efs
+sudo chmod 0777 /mnt/efs
 _DATA
 
   tags = {
