@@ -151,10 +151,14 @@ module "slurm-worker" {
 }
 
 output "master" {
-  value = [for instance in tolist(setunion(module.slurm-master, module.slurm-worker-grv)) : instance.public_ip]
+  value = [for instance in module.slurm-master : instance.public_ip]
 }
 
-output "workers" {
+output "workers-cpu" {
+  value = [for instance in module.slurm-worker-grv : instance.public_ip]
+}
+
+output "workers-gpu" {
   value = [for instance in module.slurm-worker : instance.public_ip]
 }
 
