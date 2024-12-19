@@ -7,15 +7,15 @@
 
 ## Get Started ##
 
-* [1. Slurm Cluster Provison](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/1.provison.md)
+* [1. slurm cluster provison](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/1.provison.md)
 
-* [2. Slurm Cluster Monitoring]
+* [2. slurm cluster monitoring setup]
    - https://github.com/vpenso/prometheus-slurm-exporter
    - https://grafana.com/grafana/dashboards/4323-slurm-dashboard/
 
-* [3. Slurm Basic](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.slurm-basic.md)
+* [3. slurm command basic](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.slurm-basic.md)
 
-* [4. Distributed Training]
+* [4. distributed training]
   * [Multi-node-training on slurm with PyTorch](https://gist.github.com/TengdaHan/1dd10d335c7ca6f13810fff41e809904)
 
 
