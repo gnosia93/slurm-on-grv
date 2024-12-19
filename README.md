@@ -2,8 +2,8 @@
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/slurm-ws-arch.png)
 
-**This workshop explains about how to use AWS graviton EC2 instnaces for pytorch distributed training with slurm.** 
-AWS Graviton processors are custom-built by AWS to deliver the best price performance for cloud workloads. The Graviton processor is one of three processor options and powers Amazon EC2 instance types for general purpose, compute-optimized, memory-optimized, and storage-optimized use cases.  
+**This workshop is about how to use AWS graviton EC2 instances for pytorch distributed training with slurm.** 
+AWS Graviton processors are custom-built by AWS to deliver the best price performance for cloud workloads. 
 Launched in 2019, Graviton2 is the second generation of AWS Graviton processors. Graviton2-based instance types offer up to 40% better price performance compared to fifth generation instances.
 **AWS Graviton3 processors are optimized for ML workloads and provide twice the Single Instruction Multiple Data (SIMD) bandwidth while also supporting bfloat16.** 
 
