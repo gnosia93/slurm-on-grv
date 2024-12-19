@@ -54,6 +54,7 @@
         src: /etc/munge/munge.key
         dest: /mnt/efs
         owner: munge
+        group: munge
         mode: "0400"
         remote_src: true
 
