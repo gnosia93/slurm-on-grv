@@ -13,10 +13,9 @@
   curl https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2 -o slurm-24.11.0.tar.bz2
   tar -xaf slurm-24.11.0.tar.bz2
   cd slurm-24.11.0
-  sudo mk-build-deps -i debian/control
+  sudo mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' debian/control
   debuild -b -uc -us
   ```
 
 
-  mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' debian/control
 
