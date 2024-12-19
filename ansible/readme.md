@@ -1,3 +1,5 @@
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/ansible.png)
+
 ## Simple Example ##
 
 ```
