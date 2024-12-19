@@ -48,5 +48,11 @@
         name: munge
         state: started
         enabled: true
+    - name: copy munge.key
+      ansible.builtin.copy:
+        src: /etc/munge/munge.key
+        dest: /mnt/efs
+        owner: munge
+        mode: 400
 
     
