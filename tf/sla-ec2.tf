@@ -151,14 +151,14 @@ module "slurm-worker" {
 }
 
 output "master" {
-  value = [for instance in module.slurm-master : instance.public_ip]
+  value = [for instance in tolist(setunion(module.slurm-master, module.slurm-worker-grv)) : instance.public_ip]
 }
 
 output "workers" {
   value = [for instance in module.slurm-worker : instance.public_ip]
-  value = [for instance in module.slurm-worker-grv : instance.public_ip]
 }
 
+# tolist(setunion([var.your_ip_cidr], var.github_webhook_ips))
 output "efs-id" {
   value = module.efs.id
 }
