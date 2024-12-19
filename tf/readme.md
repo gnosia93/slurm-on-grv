@@ -16,6 +16,7 @@ git clone https://github.com/aws/efs-utils
 sudo apt install -y make
 sudo apt install -y binutils
 sudo apt install -y cargo
+sudo apt install -y pkg-config
 cd efs-utils
 ./build-deb.sh
 sudo apt install ./build/amazon-efs-utils*deb
