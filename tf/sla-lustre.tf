@@ -23,7 +23,7 @@ module "lustre_persist" {
 
   storage_capacity              = 30
   storage_type                  = "HDD"
-  subnet_ids                    = [ module.vpc.public_subnets[1].id ]
+  subnet_ids                    = [ module.vpc.public_subnets[1] ]
 
   # Data Repository Association(s)
 /*
