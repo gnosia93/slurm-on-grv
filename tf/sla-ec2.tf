@@ -70,6 +70,9 @@ module "slurm-master" {
      EFS_ID = module.efs.id
   })
 
+  depends_on = [ module.efs ]
+
+
   tags = {
     Terraform   = "true"
     Environment = "dev"
