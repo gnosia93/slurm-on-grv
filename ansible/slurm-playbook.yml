@@ -55,5 +55,6 @@
         dest: /mnt/efs
         owner: munge
         mode: 400
+        remote_src: true
 
     
