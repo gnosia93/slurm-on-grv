@@ -9,7 +9,7 @@
 
 * execute following commands in each node
   ```
-  apt-get install build-essential fakeroot devscripts equivs
+  sudo apt install -y build-essential fakeroot devscripts equivs
   tar -xaf slurm-24.11.0.tar.bz2
   cd slurm-24.11.0
   mk-build-deps -i debian/control
