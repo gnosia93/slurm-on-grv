@@ -29,8 +29,10 @@ sudo apt install -y ./build/amazon-efs-utils*deb
 sudo mkdir /mnt/efs
 sudo chmod 0777 /mnt/efs
 sudo mount -t efs -o tls fs-01d9f13a1c92ac757:/ /mnt/efs
-
 ```
+
+## Lustre ##
+* https://docs.aws.amazon.com/ko_kr/fsx/latest/LustreGuide/getting-started.html
 
 ## Terraform ##
 
