@@ -49,6 +49,7 @@
         state: started
         enabled: true
     - name: copy munge.key
+      become: yes
       ansible.builtin.copy:
         src: /etc/munge/munge.key
         dest: /mnt/efs
