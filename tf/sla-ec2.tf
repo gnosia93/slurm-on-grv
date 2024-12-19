@@ -170,5 +170,7 @@ output "workers" {
   value = [for instance in module.slurm-worker : instance.public_ip]
 }
 
-
+output "efs-id" {
+  value = module.efs.id
+}
 
