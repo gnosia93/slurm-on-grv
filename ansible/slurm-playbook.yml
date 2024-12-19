@@ -36,7 +36,6 @@
   hosts: master
   become: yes
   tasks:
-    block:
     - name: master install
       ansible.builtin.apt:
         pkg:
