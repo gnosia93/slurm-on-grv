@@ -31,3 +31,7 @@ sudo chmod 0777 /mnt/efs
 sudo mount -t efs -o tls fs-01d9f13a1c92ac757:/ /mnt/efs
 
 ```
+
+## templatefile ##
+
+* https://dewble.tistory.com/entry/configuring-terraform-resources-with-files
