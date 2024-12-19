@@ -8,7 +8,8 @@
 ## Get Started ##
 
 * [1. Slurm Cluster Provison](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/1.provison.md)
-
+* [2. Configure Cluster Monitoring]
+   - https://grafana.com/grafana/dashboards/4323-slurm-dashboard/
 
 
 ## tutorial ##  
