@@ -8,7 +8,7 @@
 * https://registry.terraform.io/modules/terraform-aws-modules/efs/aws/latest
 
 ### 설치하기 ###
-* 1. 아래를 ec2 의 user_data 안에 넣어야 한다. yum 은 지원하나 ubuntu 의 경우 직접 컴파일해서 설치해야 한다.  
+* [step 1] 아래를 ec2 의 user_data 안에 넣어야 한다. yum 은 지원하나 ubuntu 의 경우 직접 컴파일해서 설치해야 한다.  
 ```
 sudo apt install git
 git clone https://github.com/aws/efs-utils
@@ -23,7 +23,7 @@ cd efs-utils
 sudo apt install -y ./build/amazon-efs-utils*deb
 ```
 
-* 2. ec2 에서 파일 시스템으로 마운트한다.  fs-01d9f13a1c92ac757 는 콘솔에서 조회한다. 
+* [step 2] ec2 에서 파일 시스템으로 마운트한다.  fs-01d9f13a1c92ac757 는 콘솔에서 조회한다. 
 ```
 sudo mkdir /mnt/efs
 sudo chmod 0777 /mnt/efs
