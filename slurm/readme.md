@@ -17,3 +17,6 @@
   debuild -b -uc -us
   ```
 
+
+  mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' debian/control
+
