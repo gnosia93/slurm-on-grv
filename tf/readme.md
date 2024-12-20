@@ -32,19 +32,17 @@
     ...    
   ```
   #### [userdata.tpl] ####
-  if there is `#cloud-config` in userdata template file, cloud-init daemon interprete and process the section from the line   
+  `>> /home/ubuntu/userdata_output.txt 2>&1` is added at the end of line for debug. If there are no errrors in initialization, userdata_output file has just efs_id and converetd host_name.
   ```
   ...
-  sudo mkdir /mnt/efs
-  sudo mount -t efs -o tls ${EFS_ID}:/ /mnt/efs
-  sudo chmod 0777 /mnt/efs
-  #sudo hostnamectl set-hostname ${HOST_NAME}
-  #sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/host
-  
-  #cloud-config	
-  runcmd:
-  - sudo hostnamectl set-hostname ${HOST_NAME}
-  - sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/hosts
+  sudo apt install -y ./build/amazon-efs-utils*deb
+  sudo mkdir /mnt/efs >> /home/ubuntu/userdata_output.txt 2>&1
+  sudo mount -t efs -o tls ${EFS_ID}:/ /mnt/efs >> /home/ubuntu/userdata_output.txt 2>&1
+  sudo chmod 0777 /mnt/efs >> /home/ubuntu/userdata_output.txt 2>&1
+  sudo hostnamectl set-hostname ${HOST_NAME} >> /home/ubuntu/userdata_output.txt 2>&1
+  sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/hosts >> /home/ubuntu/userdata_output.txt 2>&1
+  sudo echo ${EFS_ID} >> /home/ubuntu/userdata_output.txt 2>&1
+  sudo echo ${HOST_NAME} >> /home/ubuntu/userdata_output.txt 2>&1
   ```
           
 ## EFS ##
