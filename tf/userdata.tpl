@@ -16,10 +16,10 @@ sudo apt install -y net-tools >> /home/ubuntu/userdata_output.txt 2>&1
 sudo apt install -y git >> /home/ubuntu/userdata_output.txt 2>&1
 sudo apt install -y make >> /home/ubuntu/userdata_output.txt 2>&1
 sudo apt install -y binutils >> /home/ubuntu/userdata_output.txt 2>&1
-sudo apt --fix-broken install >> /home/ubuntu/userdata_output.txt 2>&1
-sudo apt install -y cargo >> /home/ubuntu/userdata_output.txt 2>&1
 sudo apt install -y pkg-config >> /home/ubuntu/userdata_output.txt 2>&1
 sudo apt install -y libssl-dev >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt --fix-broken install -y >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y cargo >> /home/ubuntu/userdata_output.txt 2>&1
 git clone https://github.com/aws/efs-utils >> /home/ubuntu/userdata_output.txt 2>&1
 cd efs-utils >> /home/ubuntu/userdata_output.txt 2>&1
 ./build-deb.sh >> /home/ubuntu/userdata_output.txt 2>&1
