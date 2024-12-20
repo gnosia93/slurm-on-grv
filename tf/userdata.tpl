@@ -32,5 +32,5 @@ sudo chmod 0777 /mnt/efs
 #cloud-config	
 runcmd:
 - sudo hostnamectl set-hostname ${HOST_NAME}
-- sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/host
+- sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/hosts
 
