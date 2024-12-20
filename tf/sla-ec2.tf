@@ -103,7 +103,8 @@ module "slurm-worker-grv" {
   ]
 
   user_data              = templatefile("${path.module}/userdata.tpl", {
-      EFS_ID = module.efs.id
+      EFS_ID = module.efs.id,
+      HOST_NAME = name
   })
 
   depends_on = [ module.efs ]
