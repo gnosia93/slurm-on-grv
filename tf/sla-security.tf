@@ -9,6 +9,12 @@ module "ec2_sg" {
 
   ingress_with_cidr_blocks = [
     {
+      from_port   = -1
+      to_port     = -1
+      protocol    = "icmp"
+      cidr_blocks = module.vpc.vpc_cidr_block
+    },
+    {
       from_port   = 0
       to_port     = 65535
       protocol    = "tcp"
