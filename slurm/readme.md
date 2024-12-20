@@ -5,7 +5,13 @@
 
 
 * Make sure the clocks, users and groups (UIDs and GIDs) are synchronized across the cluster.
-    - NOTE: The SlurmUser must exist prior to starting Slurm and must exist on all nodes of the cluster.
+    * NOTE: The SlurmUser must exist prior to starting Slurm and must exist on all nodes of the cluster.
+        ```
+        sudo addgroup -gid 1111 munge
+        sudo addgroup -gid 1121 slurm
+        sudo adduser -u 1111 munge --disabled-password --gecos "" -gid 1111
+        sudo adduser -u 1121 slurm --disabled-password --gecos "" -gid 1121
+        ```  
 
 * Install MUNGE for authentication. Make sure that all nodes in your cluster have the same munge.key. Make sure the MUNGE daemon, munged, is started before you start the Slurm daemons.
     * Install munge on the master:
