@@ -28,6 +28,8 @@ sudo mount -t efs -o tls ${EFS_ID}:/ /mnt/efs >> /home/ubuntu/combined_output.tx
 sudo chmod 0777 /mnt/efs >> /home/ubuntu/combined_output.txt 2>&1
 sudo hostnamectl set-hostname ${HOST_NAME} >> /home/ubuntu/combined_output.txt 2>&1
 sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/hosts >> /home/ubuntu/combined_output.txt 2>&1
+sudo echo ${EFS_ID} >> /home/ubuntu/combined_output.txt 2>&1
+sudo echo ${HOST_NAME} >> /home/ubuntu/combined_output.txt 2>&1
 
 #cloud-config	
 #runcmd:
