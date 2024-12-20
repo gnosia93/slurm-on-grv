@@ -7,22 +7,22 @@ echo \
  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-sudo apt install -y jq
-sudo apt install -y awscli
-sudo apt install -y openjdk-17-jdk-headless
-sudo apt install -y apache2-utils
-sudo apt install -y net-tools
-sudo apt install -y git
-sudo apt install -y make
-sudo apt install -y binutils
-sudo apt install -y cargo
-sudo apt install -y pkg-config
-sudo apt install -y libssl-dev
-git clone https://github.com/aws/efs-utils
-cd efs-utils
-./build-deb.sh
-sudo apt install -y ./build/amazon-efs-utils*deb
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y jq >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y awscli >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y openjdk-17-jdk-headless >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y apache2-utils >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y net-tools >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y git >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y make >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y binutils >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y cargo >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y pkg-config >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y libssl-dev >> /home/ubuntu/userdata_output.txt 2>&1
+git clone https://github.com/aws/efs-utils >> /home/ubuntu/userdata_output.txt 2>&1
+cd efs-utils >> /home/ubuntu/userdata_output.txt 2>&1
+./build-deb.sh >> /home/ubuntu/userdata_output.txt 2>&1
+sudo apt install -y ./build/amazon-efs-utils*deb >> /home/ubuntu/userdata_output.txt 2>&1
 sudo mkdir /mnt/efs >> /home/ubuntu/userdata_output.txt 2>&1
 sudo mount -t efs -o tls ${EFS_ID}:/ /mnt/efs >> /home/ubuntu/userdata_output.txt 2>&1
 sudo chmod 0777 /mnt/efs >> /home/ubuntu/userdata_output.txt 2>&1
