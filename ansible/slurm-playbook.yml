@@ -84,7 +84,7 @@
 - name: compile and install slurm  
   hosts: all
   tasks:
-      - name: The compile tasks taking long are in progress, slurm packages will be installed in /usr/local
+      - name: The compile tasks taking time are in progress, slurm packages will be installed in /usr/local
         shell: |
           curl https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2 -o slurm-24.11.0.tar.bz2
           tar -xaf slurm-24.11.0.tar.bz2
