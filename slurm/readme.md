@@ -1,7 +1,8 @@
 
 ## Super Quick Start ##
 
-* Make sure the clocks, users and groups (UIDs and GIDs) are synchronized across the cluster. clocks (time) synchronization is fullfilled usually by NTP, but when you are using public cloud service such as AWS, you don't need to setup clocks synchronization.
+* Make sure the clocks, users and groups (UIDs and GIDs) are synchronized across the cluster.
+  Clocks (time) synchronization is fullfilled usually by NTP, but when you are using public cloud service such as AWS, you don't need to setup clocks synchronization.
     * NOTE: The SlurmUser must exist prior to starting Slurm and must exist on all nodes of the cluster.
         ```
         sudo addgroup -gid 1111 munge
