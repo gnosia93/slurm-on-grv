@@ -3,28 +3,18 @@
   tasks:
     - debug:
         msg: "{{ ansible_hostname }}:{{ ansible_default_ipv4.address }}"
-    - name: Add IP address of all hosts to all hosts
-      become: yes
-      lineinfile:
-        dest: /etc/hosts
-        regexp: '.*{{ item }}$'
-        line: "{{ hostvars[item].ansible_host }} {{item}}"
-        state: present
-      when: hostvars[item].ansible_host is defined
-      with_items: "{{ groups.all }}"
-
-- name: update /etc/hosts
-  hosts: all
-  tasks:
-  - name: generate file
-    become: yes
-    blockinfile:
-      backup: yes
-      path: /etc/hosts
-      block: |
-        {% for host in groups['all'] %} 
-        {{ hostvars[host]['ansible_facts']['ens5']['ipv4']['address'] }} {{ hostvars[host]['ansible_facts']['hostname'] }} 
-        {% endfor %}
+    - name: update /etc/hosts
+      hosts: all
+      tasks:
+      - name: generate file
+        become: yes
+        blockinfile:
+          backup: yes
+          path: /etc/hosts
+          block: |
+            {% for host in groups['all'] %} 
+            {{ hostvars[host]['ansible_facts']['ens5']['ipv4']['address'] }} {{ hostvars[host]['ansible_facts']['hostname'] }} 
+            {% endfor %}
 
 
 # https://www.baeldung.com/linux/ansible-add-user-password-group
