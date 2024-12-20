@@ -61,7 +61,7 @@ module "slurm-master" {
   subnet_id              = module.vpc.public_subnets[0]
   associate_public_ip_address	= "true" 
 
-
+/* not working in module 
   provisioner "remote-exec" {  
     inline = [
       "sudo hostnamectl set-hostname sl-${each.key}", 
@@ -75,7 +75,7 @@ module "slurm-master" {
       host = self.public_ip
     }
   }
-
+*/
 
 
   root_block_device      = [ 
