@@ -84,7 +84,7 @@ module "slurm-master" {
     connection {
       type = "ssh"
       user = "ubuntu"
-      private_key = file("!/aws-kp-2.pem")
+      private_key = file("~/aws-kp-2.pem")
       host = self.public_ip
     }
   }
