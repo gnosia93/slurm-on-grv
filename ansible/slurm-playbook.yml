@@ -13,6 +13,18 @@
       when: hostvars[item].ansible_host is defined
       with_items: "{{ groups.all }}"
 
+- name: update /etc/hosts
+  hosts: all
+  tasks:
+  - name: generate file
+    blockinfile:
+      backup: yes
+      path: /etc/hosts
+      block: |
+        {% for host in groups['all'] %} 
+        {{ hostvars[host]['ansible_facts']['ens5']['ipv4']['address'] }} {{ hostvars[host]['ansible_facts']['fqdn'] }} {{ hostvars[host]['ansible_facts']['hostname'] }} 
+        {% endfor %}
+
 
 # https://www.baeldung.com/linux/ansible-add-user-password-group
 - name: create munge and slurm user
