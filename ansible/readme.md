@@ -36,8 +36,9 @@ $ ansible-playbook playbook.yml -i ansible_hosts --user ubuntu --key-file ~/aws-
   ```
   password: ''            # login without password with '' or passwd -d slurm at tty
   ```
+
 * Ansible: Add IPs from inventory to /etc/hosts of all nodes
-  https://serverfault.com/questions/832799/ansible-add-ips-from-inventory-to-etc-hosts-of-all-nodes
+  * https://serverfault.com/questions/832799/ansible-add-ips-from-inventory-to-etc-hosts-of-all-nodes
 
 
 ## Reference ##
