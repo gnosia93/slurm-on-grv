@@ -80,6 +80,13 @@ module "slurm-master" {
       "sudo hostnamectl set-hostname sl-${each.key}", 
       "sudo sed -i '/127.0.0.1 localhost/ s/$/ sl-\\${each.key}/' /etc/hosts"
     ]
+
+    connection {
+      type = "ssh"
+      user = "ubuntu"
+      private_key = file("!/aws-kp-2.pem")
+      host = self.public_ip
+    }
   }
 
   tags = {
