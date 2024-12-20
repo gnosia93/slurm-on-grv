@@ -3,9 +3,7 @@
   gather_facts: yes
   tasks:
     - debug: var=ansible_hostname
-    - meta: end_play
-      when: var not in ("no")
-    
+    - meta: end_play    
 
 
 
