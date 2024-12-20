@@ -14,7 +14,8 @@
 * https://discuss.hashicorp.com/t/terraform-passing-variables-from-resource-to-cloudinit-data-block/51143
 * https://grantorchard.com/dynamic-cloudinit-content-with-terraform-file-templates/   
   #### [ec2.tf] ####
-  terraform file named ec2.tf has user_data section, in there you call `templatefile` function with teamplte file path and some parameter.  
+  terraform file named ec2.tf has user_data section, in there you call `templatefile` function with teamplte file path and some parameter.
+  This replace two placehoder ${HOST_NAME} and ${EFS_ID} in userdata.tpl template file.
   ```
   module "slurm-worker-grv" {
     source  = "terraform-aws-modules/ec2-instance/aws"
@@ -35,7 +36,7 @@
   ```
   ...
   sudo mkdir /mnt/efs
-  sudo mount -t efs -o tls `${EFS_ID}`:/ /mnt/efs
+  sudo mount -t efs -o tls ${EFS_ID}:/ /mnt/efs
   sudo chmod 0777 /mnt/efs
   #sudo hostnamectl set-hostname ${HOST_NAME}
   #sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/host
