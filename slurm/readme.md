@@ -42,6 +42,8 @@
       sudo make install
       ```
 
+*  visit [Slurm Configuration Tool](https://slurm.schedmd.com/configurator.html) and make slurm.conf as you wish
+
 * Install the configuration file in `<sysconfdir>`/slurm.conf.
   * NOTE: You will need to install this configuration file on all nodes of the cluster.
   * `<sysconfdir>` is /usr/local if you compile source code by your self and didn't set prefix  
