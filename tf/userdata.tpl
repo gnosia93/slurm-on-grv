@@ -1,5 +1,5 @@
 #! /bin/bash
-sudo apt-get update
+sudo apt update
 sudo apt install -y net-tools 
 sudo apt install -y git 
 sudo apt install -y make 
