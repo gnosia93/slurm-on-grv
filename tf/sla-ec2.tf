@@ -50,7 +50,7 @@ data "aws_ami" "ubuntu-arm64-nvidia" {
 module "slurm-master" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  for_each = toset(["mst"])
+  for_each = toset(["mst", "login", "db"])
   name = "sl-${each.key}"
 
   instance_type          = "c6g.xlarge"
