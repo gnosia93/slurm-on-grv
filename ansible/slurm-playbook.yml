@@ -80,7 +80,8 @@
             name: munge
             state: started
             enabled: true
-  - name: compile and install slurm  
+
+- name: compile and install slurm  
   hosts: all
   tasks:
       - name: slurm install
