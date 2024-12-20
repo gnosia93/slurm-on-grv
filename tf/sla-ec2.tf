@@ -60,20 +60,7 @@ module "slurm-master" {
   vpc_security_group_ids = [module.ec2_sg.security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
   associate_public_ip_address	= "true" 
- 
-  root_block_device      = [ 
-    {
-      volume_size = 100       # in GB 
-      volume_type = "gp3"
-    }
-  ]
-  
-  user_data              = templatefile("${path.module}/userdata.tpl", {
-     EFS_ID = module.efs.id,
-     HOST_NAME = "sl-${each.key}"
-  })
 
-  depends_on = [ module.efs ]
 
   provisioner "remote-exec" {  
     inline = [
@@ -89,6 +76,23 @@ module "slurm-master" {
     }
   }
 
+
+
+  root_block_device      = [ 
+    {
+      volume_size = 100       # in GB 
+      volume_type = "gp3"
+    }
+  ]
+  
+  user_data              = templatefile("${path.module}/userdata.tpl", {
+     EFS_ID = module.efs.id,
+     HOST_NAME = "sl-${each.key}"
+  })
+
+  depends_on = [ module.efs ]
+
+ 
   tags = {
     Terraform   = "true"
     Environment = "dev"
