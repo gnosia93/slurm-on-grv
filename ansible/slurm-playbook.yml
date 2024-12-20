@@ -4,6 +4,7 @@
     - debug:
         msg: "{{ ansible_hostname }}:{{ ansible_default_ipv4.address }}"
     - name: Add IP address of all hosts to all hosts
+      become: yes
       lineinfile:
         dest: /etc/hosts
         regexp: '.*{{ item }}$'
