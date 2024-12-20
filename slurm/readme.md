@@ -1,8 +1,5 @@
 
-
-
 ## Super Quick Start ##
-
 
 * Make sure the clocks, users and groups (UIDs and GIDs) are synchronized across the cluster.
     * NOTE: The SlurmUser must exist prior to starting Slurm and must exist on all nodes of the cluster.
@@ -56,3 +53,9 @@
 
 * Start the slurmctld and slurmd daemons.
   * eg. sudo systemctl start slurmctld
+ 
+## reference ##
+
+* https://github.com/lopentusska/slurm_ubuntu_gpu_cluster
+* https://github.com/nateGeorge/slurm_gpu_ubuntu?tab=readme-ov-file
+* https://github.com/mknoxnv/ubuntu-slurm
