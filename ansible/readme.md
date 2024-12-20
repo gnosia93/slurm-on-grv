@@ -22,12 +22,11 @@ $ ansible-playbook playbook.yml -i ansible_hosts --user ubuntu --key-file ~/aws-
 
 
 ## Ansible Configuration Findings ##
-* Ansible Config Location Priority
+* Ansible Config Priority
   * ANSIBLE_CONFIG (environment variable if set)
   * ansible.cfg (in the current directory)
   * ~/.ansible.cfg (in the home directory)
   * /etc/ansible/ansible.cfg
-
 
 * Create user with option --disabled-password by Ansible
   * https://stackoverflow.com/questions/39013796/create-user-with-option-disabled-password-by-ansible
@@ -37,6 +36,9 @@ $ ansible-playbook playbook.yml -i ansible_hosts --user ubuntu --key-file ~/aws-
   ```
   password: ''            # login without password with '' or passwd -d slurm at tty
   ```
+* Ansible: Add IPs from inventory to /etc/hosts of all nodes
+  https://serverfault.com/questions/832799/ansible-add-ips-from-inventory-to-etc-hosts-of-all-nodes
+
 
 ## Reference ##
 
