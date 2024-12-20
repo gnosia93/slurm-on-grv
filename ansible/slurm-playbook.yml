@@ -6,7 +6,7 @@
 - name: update /etc/hosts
   hosts: all
   tasks:
-  - name: generate file
+  - name: update /etc/hosts
     become: yes
     blockinfile:
       backup: yes
