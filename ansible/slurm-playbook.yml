@@ -98,7 +98,7 @@
 - name: copy slurm.conf/gres.conf to slurm cluster
   hosts: all
   become: yes
-  remote_user: slurm
+  remote_user: ubuntu
   tasks:
     - name: copy files from local
       copy:
