@@ -29,6 +29,5 @@ sudo chmod 0777 /mnt/efs
 sudo hostnamectl set-hostname ${HOST_NAME}
 sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/host
 
-#cloud-config
-${yamlencode(hostname = "${HOST_NAME}");}
+#cloud-config ${yamlencode(hostname = "${HOST_NAME}")}
 
