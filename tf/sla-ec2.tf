@@ -69,7 +69,8 @@ module "slurm-master" {
   ]
   
   user_data              = templatefile("${path.module}/userdata.tpl", {
-     EFS_ID = module.efs.id
+     EFS_ID = module.efs.id.
+     HOST_NAME = module.slurm-master.name
   })
 
   depends_on = [ module.efs ]
@@ -104,7 +105,7 @@ module "slurm-worker-grv" {
 
   user_data              = templatefile("${path.module}/userdata.tpl", {
       EFS_ID = module.efs.id,
-      HOST_NAME = this.name
+      HOST_NAME = module.slurm-worker-grv.name
   })
 
   depends_on = [ module.efs ]
@@ -139,7 +140,8 @@ module "slurm-worker" {
   ]
 
   user_data              = templatefile("${path.module}/userdata.tpl", {
-      EFS_ID = module.efs.id
+      EFS_ID = module.efs.id,
+      HOST_NAME = module.slurm-worker.name
   })
 
   depends_on = [ module.efs ]
