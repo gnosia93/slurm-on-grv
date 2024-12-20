@@ -2,8 +2,7 @@
   gather_facts: yes
   tasks:
     - debug:
-        msg: "{{ ansible_hostname }}:{{ ansible_default_ipv4.address }}"
-
+        cluster-node: "{{ ansible_hostname }}:{{ ansible_default_ipv4.address }}"
 
 # https://www.baeldung.com/linux/ansible-add-user-password-group
 - name: create munge and slurm user
