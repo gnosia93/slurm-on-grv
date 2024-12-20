@@ -11,7 +11,7 @@ module "ec2_sg" {
     {
       from_port   = -1
       to_port     = -1
-      protocol    = "icmp"
+      protocol    = "Echo Request"
       cidr_blocks = module.vpc.vpc_cidr_block
     },
     {
