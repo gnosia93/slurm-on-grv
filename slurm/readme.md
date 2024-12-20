@@ -53,9 +53,9 @@
   * NOTE: You will need to install this configuration file on all nodes of the cluster.
   * gres.conf is located in same directory with slurm.conf
   * gres.conf
-  ```
-  AutoDetect=nvml
-  ```
+     ```
+     AutoDetect=nvml
+     ```
   * see https://slurm.schedmd.com/gres.conf.html for more details
   
 * systemd (optional): enable the appropriate services on each system:
