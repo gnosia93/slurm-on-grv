@@ -47,7 +47,7 @@
 
 * Install the configuration file in `<sysconfdir>`/slurm.conf.
   * NOTE: You will need to install this configuration file on all nodes of the cluster.
-  * `<sysconfdir>` is /usr/local if you compile source code by your self and didn't set prefix  
+  * `<sysconfdir>` is /usr/local when you compile source code by your self unless you set prefix  
 
 * systemd (optional): enable the appropriate services on each system:
   * Controller: sudo systemctl enable slurmctld
