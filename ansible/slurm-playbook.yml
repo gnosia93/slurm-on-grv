@@ -140,6 +140,8 @@
         owner: slurm
         group: slurm     
 - name: create files which is required by slrumd
+  hosts: all
+  become: yes
   tasks:
     - name: create slrumctl logfile
       ansible.builtin.file:
