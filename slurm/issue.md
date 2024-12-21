@@ -45,3 +45,4 @@ dnf install dbus-devel
 and then run a clean Slurm build.
 ```
   * https://askubuntu.com/questions/1438828/dbus-package-installation-is-failing-in-ubuntu22-04-chroot-environment
+   sudo apt-get install -y dbus
