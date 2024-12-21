@@ -60,7 +60,7 @@
         AutoDetect=nvml
         ```
    * `<sysconfdir>`/cgroup.conf
-      * cgroup.conf is located in same directory with slurm.conf    
+      * cgroup.conf is located in same directory with slurm.conf
       * see https://slurm.schedmd.com/cgroup.conf.html
 
 * Make logfile and spool directory.
