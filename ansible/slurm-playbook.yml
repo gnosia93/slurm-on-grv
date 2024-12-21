@@ -116,30 +116,40 @@
         register: out
       - debug: var=out.stdout_lines      
 
-- name: copy slurm.conf/gres.conf to slurm cluster
+- name: copy configuration to slurm cluster
   hosts: all
   become: yes
   remote_user: ubuntu
   tasks:
-    - name: copy files from local
+    - name: slurm.conf
       copy:
         src: ~/slurm-on-grv/slurm/conf/slurm.conf
         dest: /usr/local/etc
-    - name: copy files from local
+    - name: gres.conf
       copy:
         src: ~/slurm-on-grv/slurm/conf/gres.conf
         dest: /usr/local/etc
-    - name: change owner
+    - name: cgroup.conf
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/cgroup.conf
+        dest: /usr/local/etc     
+    - name: change the owner of slurm.conf
       file:
         path: /usr/local/etc/slurm.conf
         owner: slurm
         group: slurm
-    - name: change owner
+    - name: change the owner of gres.conf
       file:
         path: /usr/local/etc/gres.conf
         owner: slurm
         group: slurm     
-- name: create files which is required by slrumctld 
+    - name: change the owner of cgroup.conf
+      file:
+        path: /usr/local/etc/cgroup.conf
+        owner: slurm
+        group: slurm   
+        
+- name: create slrumctld files in cluster
   hosts: master
   become: yes
   tasks:
@@ -164,7 +174,8 @@
         owner: slurm
         group: slurm
         mode: '0777'
-- name: create files which is required by slrumd 
+        
+- name: create slrumd files in cluster
   hosts: workers
   become: yes
   tasks:
