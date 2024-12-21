@@ -1,6 +1,6 @@
 * slurmd - cgroup namespace 'freezer' not mounted. aborting
 
-[error]
+[problem]
 ```
 slurmd: debug3: Trying to load plugin /usr/local/lib/slurm/proctrack_cgroup.so
 slurmd: debug3: plugin_load_from_file->_verify_syms: found Slurm plugin name:Process tracking via linux cgroup freezer subsystem type:proctrack/cgroup version:0x180b00
@@ -22,6 +22,7 @@ ConstrainRAMSpace=no
 ```
 
 * /usr/local/lib/slurm/cgroup_v2.so: Does not exist or not a regular file.
+[problem]
 ```
 slurmd: error: The option "CgroupAutomount" is defunct, please remove it from cgroup.conf.
 slurmd: debug:  Log file re-opened
@@ -33,4 +34,12 @@ slurmd: error: cannot find cgroup plugin for cgroup/v2
 slurmd: error: cannot create cgroup context for cgroup/v2
 slurmd: error: Unable to initialize cgroup plugin
 slurmd: error: slurmd initialization failed
+```
+
+[[solution]](https://stackoverflow.com/questions/74038679/slurmd-error-couldnt-find-the-specified-plugin-name-for-cgroup-v2-looking-at)
+```
+I had the same problem. Slurm has support for both cgroup/v1 and v2, but support for v2 is only compiled in if the dbus development files are present. So first install dbus-devel
+
+dnf install dbus-devel
+and then run a clean Slurm build.
 ```
