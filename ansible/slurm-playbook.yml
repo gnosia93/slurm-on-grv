@@ -3,6 +3,7 @@
   tasks:
     - debug:
         msg: "{{ ansible_hostname }}:{{ ansible_default_ipv4.address }}"
+        
 - name: gather cluster node information and update /etc/hosts of each node
   hosts: all
   tasks:
@@ -15,7 +16,6 @@
         {% for host in groups['all'] %} 
         {{ hostvars[host]['ansible_facts']['ens5']['ipv4']['address'] }} {{ hostvars[host]['ansible_facts']['hostname'] }} 
         {% endfor %}
-
 
 # https://www.baeldung.com/linux/ansible-add-user-password-group
 - name: create munge and slurm user
