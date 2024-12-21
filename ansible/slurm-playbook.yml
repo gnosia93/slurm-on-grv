@@ -140,23 +140,24 @@
         owner: slurm
         group: slurm     
 - name: create files which is required by slrumd
-  - name: create slrumctl logfile
-    ansible.builtin.file:
-      path: /var/log/slurmctld.log
-      owner: slurm
-      group: slurm
-      mode: '0644'
-  - name: create slrumctl pid
-    ansible.builtin.file:
-      path: /var/run/slurmctld.pid
-      owner: slurm
-      group: slurm
-      mode: '0644'
-  - name: write permission for /var/spool directory
-    ansible.builtin.file:
-      path: /var/spool/slurmctld
-      state: directory
-      owner: slurm
-      group: slurm
-      mode: '0644'
-        
+  tasks:
+    - name: create slrumctl logfile
+      ansible.builtin.file:
+        path: /var/log/slurmctld.log
+        owner: slurm
+        group: slurm
+        mode: '0644'
+    - name: create slrumctl pid
+      ansible.builtin.file:
+        path: /var/run/slurmctld.pid
+        owner: slurm
+        group: slurm
+        mode: '0644'
+    - name: write permission for /var/spool directory
+      ansible.builtin.file:
+        path: /var/spool/slurmctld
+        state: directory
+        owner: slurm
+        group: slurm
+        mode: '0644'
+          
