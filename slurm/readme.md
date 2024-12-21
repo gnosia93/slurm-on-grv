@@ -72,6 +72,16 @@
       * /var/log/slurmd.log (owner - slurm, mode - 0664)
       * /var/run/slurmd.pid (owner - slurm, mode - 0664)
       * /var/spool/slurmd (owner - slurm, mode - 0777)
+
+* Starting the Daemons (optional and for debug)
+   * Master Node
+     ```
+     slurmctld -D -vvvvvv
+     ```
+   * Worker Node
+     ```
+     slurmd -D -vvvvv
+     ```
   
 * systemd (optional): enable the appropriate services on each system:
   * Controller: sudo systemctl enable slurmctld
