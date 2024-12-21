@@ -105,8 +105,8 @@
   tasks:
       - name: The compile tasks taking time are in progress, slurm packages will be installed in /usr/local
         shell: |
-          if [ -d "slurm-24.11.0" ]; then \
-            return 0 \
+          if [ -d "slurm-24.11.0" ]; then 
+            return 0 
           fi
           curl https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2 -o slurm-24.11.0.tar.bz2
           tar -xaf slurm-24.11.0.tar.bz2
