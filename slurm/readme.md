@@ -73,7 +73,7 @@
       * /var/run/slurmd.pid (owner - slurm, mode - 0664)
       * /var/spool/slurmd (owner - slurm, mode - 0777)
 
-* Starting the Daemons (optional and for debug)
+* [Starting the Daemons (optional and for debug)](https://slurm.schedmd.com/quickstart_admin.html#starting_daemons)
    * Master Node
      ```
      slurmctld -D -vvvvvv
