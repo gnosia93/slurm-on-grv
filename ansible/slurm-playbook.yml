@@ -163,5 +163,5 @@
         state: directory
         owner: slurm
         group: slurm
-        mode: '0664'
+        mode: '0666'
           
