@@ -139,8 +139,8 @@
         path: /usr/local/etc/gres.conf
         owner: slurm
         group: slurm     
-- name: create files which is required by slrumd
-  hosts: all
+- name: create files which is required by slrumctld 
+  hosts: master
   become: yes
   tasks:
     - name: create slrumctl logfile
@@ -160,6 +160,31 @@
     - name: write permission for /var/spool directory
       ansible.builtin.file:
         path: /var/spool/slurmctld
+        state: directory
+        owner: slurm
+        group: slurm
+        mode: '0777'
+- name: create files which is required by slrumd 
+  hosts: workers
+  become: yes
+  tasks:
+    - name: create slurmd logfile
+      ansible.builtin.file:
+        path: /var/log/slurmd.log
+        state: touch 
+        owner: slurm
+        group: slurm
+        mode: '0664'
+    - name: create slurmd pid
+      ansible.builtin.file:
+        path: /var/run/slurmd.pid
+        state: touch 
+        owner: slurm
+        group: slurm
+        mode: '0664'
+    - name: write permission for /var/spool directory
+      ansible.builtin.file:
+        path: /var/spool/slurmd
         state: directory
         owner: slurm
         group: slurm
