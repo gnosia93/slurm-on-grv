@@ -5,7 +5,7 @@ uname -m
 sudo lshw -C display
 ```
 
-## cuda driver install instruction ##
+## Cuda Driver Install ##
 
 
 
