@@ -1,5 +1,5 @@
 <p align="center">
-  <img src = "https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/ansible.png" align="center" width="25%" height="25%">
+  <img src = "https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/ansible.png" align="center" width="30%" height="30%">
 </p>
 
 * [Ansible 제대로 사용하기](https://brunch.co.kr/@growthminder/66)
