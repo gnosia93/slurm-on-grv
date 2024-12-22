@@ -41,7 +41,9 @@ slurmd: fatal: systemd scope for slurmstepd could not be set.
 [solution]
 
 * [linux systemd 서비스 추가하기](https://velog.io/@kshired/linux-systemd-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0)
-* https://serverfault.com/questions/1003056/why-does-slurm-fail-to-start-with-systemd-but-work-when-starting-manually 
+* https://serverfault.com/questions/1003056/why-does-slurm-fail-to-start-with-systemd-but-work-when-starting-manually
+
+systemd service 파일을 만든다.
 * `/lib/systemd/system/slurmd.service` 
 ```
 [Unit]
