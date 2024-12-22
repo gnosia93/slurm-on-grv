@@ -55,6 +55,7 @@ Type=forking
 ExecStart=/usr/sbin/slurmd $SLURMD_OPTIONS
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
+Restart=on-failure 
 
 [Install]
 WantedBy=multi-user.target
@@ -73,6 +74,7 @@ Type=forking
 ExecStart=/usr/sbin/slurmctld $SLURMCTLD_OPTIONS
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
+Restart=on-failure 
 
 [Install]
 WantedBy=multi-user.target
