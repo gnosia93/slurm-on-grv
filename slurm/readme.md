@@ -36,10 +36,12 @@
   * As of Dec 20 2024, version 24.11.0 is the lastest version, and download url is https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2  
 
       ```
+      
+
       curl https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2 -o slurm-24.11.0.tar.bz2
       tar -xaf slurm-24.11.0.tar.bz2
       cd slurm-24.11.0
-      ./configure
+      ./configure --enable-cgroupv2
       sudo make install
       ```
 
