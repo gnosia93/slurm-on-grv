@@ -133,4 +133,5 @@ sudo mkdir -p /system
 sudo chmod 0777 /system
 sudo mkdir -p /sys/fs/cgroup/system.slice/slurmstepd.scope
 sudo chmod -R 0777 /sys/fs/cgroup/system.slice/slurmstepd.scope
+chmod 0777 /sys/fs/cgroup/system.slice/slurmstepd.scope/slurmd/cgroup.procs
 ```
