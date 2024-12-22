@@ -36,13 +36,12 @@ slurmd: error: Unable to initialize cgroup plugin
 slurmd: error: slurmd initialization failed
 ```
 
-[[solution]](https://stackoverflow.com/questions/74038679/slurmd-error-couldnt-find-the-specified-plugin-name-for-cgroup-v2-looking-at)
+[solution]
 ```
-I had the same problem. Slurm has support for both cgroup/v1 and v2, but support for v2 is only compiled in if the dbus development files are present. So first install dbus-devel
+아래 stackoverflow에서 해답을 찾을 수 있었다.
+https://stackoverflow.com/questions/14263390/how-to-compile-a-basic-d-bus-glib-example
+ 
+sudo apt-get -y install dbus libdbus-1-dev libdbus-glib-1-2 libdbus-glib-1-dev
+```
 
-sudo apt install -y dnf
-dnf install dbus-devel
-and then run a clean Slurm build.
-```
-  * https://askubuntu.com/questions/1438828/dbus-package-installation-is-failing-in-ubuntu22-04-chroot-environment
-   sudo apt-get install -y dbus
+
