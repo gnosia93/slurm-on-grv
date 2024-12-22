@@ -1,7 +1,6 @@
-### /usr/local/lib/slurm/cgroup_v2.so: Does not exist or not a regular file ###
+## slurmd: error: Couldn't find the specified plugin name for cgroup/v2 looking at all files ##
 [problem]
 ```
-slurmd: error: The option "CgroupAutomount" is defunct, please remove it from cgroup.conf.
 slurmd: debug:  Log file re-opened
 slurmd: debug3: Trying to load plugin /usr/local/lib/slurm/cgroup_v2.so
 slurmd: debug4: /usr/local/lib/slurm/cgroup_v2.so: Does not exist or not a regular file.
@@ -27,7 +26,18 @@ ls /usr/local/lib/slurm/cgroup_v2.so
 /usr/local/lib/slurm/cgroup_v2.so
 
 
-### register systemd ###
+## slurmd: fatal: systemd scope for slurmstepd could not be set. ##
+[problem]
+```
+slurmd: debug:  Log file re-opened
+slurmd: debug3: Trying to load plugin /usr/local/lib/slurm/cgroup_v2.so
+slurmd: debug3: plugin_load_from_file->_verify_syms: found Slurm plugin name:Cgroup v2 plugin type:cgroup/v2 version:0x180b00
+slurmd: debug:  cgroup/v2: init: Cgroup v2 plugin loaded
+slurmd: debug3: Success.
+slurmd: fatal: systemd scope for slurmstepd could not be set.
+```
+[solution]
+
 https://serverfault.com/questions/1003056/why-does-slurm-fail-to-start-with-systemd-but-work-when-starting-manually 
 
 
