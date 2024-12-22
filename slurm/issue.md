@@ -50,3 +50,7 @@ ls /usr/local/lib/slurm/cgroup_v2.so
 /usr/local/lib/slurm/cgroup_v2.so
 
 
+* register systemd
+https://serverfault.com/questions/1003056/why-does-slurm-fail-to-start-with-systemd-but-work-when-starting-manually 
+
+
