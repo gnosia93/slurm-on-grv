@@ -127,3 +127,10 @@ slurmd: error: slurmd initialization failed
 
 * https://unix.stackexchange.com/questions/197718/does-managing-cgroups-require-root-access
 
+
+```
+sudo mkdir -p /system
+sudo chmod 0777 /system
+sudo mkdir -p /sys/fs/cgroup/system.slice/slurmstepd.scope
+sudo chmod 0777 /sys/fs/cgroup/system.slice/slurmstepd.scope
+```
