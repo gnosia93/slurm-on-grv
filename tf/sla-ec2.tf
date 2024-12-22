@@ -50,7 +50,7 @@ data "aws_ami" "ubuntu-arm64-nvidia" {
 module "slurm-master" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  for_each = toset(["mst", "login", "db"])
+  for_each = toset(["mst"])
   name = "sl-${each.key}"
 
   instance_type          = "c6g.xlarge"
@@ -60,23 +60,6 @@ module "slurm-master" {
   vpc_security_group_ids = [module.ec2_sg.security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
   associate_public_ip_address	= "true" 
-
-/* not working in module 
-  provisioner "remote-exec" {  
-    inline = [
-      "sudo hostnamectl set-hostname sl-${each.key}", 
-      "sudo sed -i '/127.0.0.1 localhost/ s/$/ sl-\\${each.key}/' /etc/hosts"
-    ]
-
-    connection {
-      type = "ssh"
-      user = "ubuntu"
-      private_key = file("~/aws-kp-2.pem")
-      host = self.public_ip
-    }
-  }
-*/
-
 
   root_block_device      = [ 
     {
@@ -102,7 +85,7 @@ module "slurm-master" {
 module "slurm-worker-grv" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  for_each = toset(["w1", "w2", "w3"])
+  for_each = toset(["w1", "w2"])
   name = "sle-${each.key}"
 
   instance_type          = "c7g.2xlarge"
@@ -134,7 +117,7 @@ module "slurm-worker-grv" {
   }
 }
 
-
+/*
 module "slurm-worker" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
@@ -169,6 +152,8 @@ module "slurm-worker" {
     Environment = "dev"
   }
 }
+*/
+
 
 output "master" {
   value = [for instance in module.slurm-master : instance.public_ip]
@@ -178,12 +163,13 @@ output "workers-cpu" {
   value = [for instance in module.slurm-worker-grv : instance.public_ip]
 }
 
+/*
 output "workers-gpu" {
   value = [for instance in module.slurm-worker : instance.public_ip]
 }
 
-# tolist(setunion([var.your_ip_cidr], var.github_webhook_ips))
 output "efs-id" {
   value = module.efs.id
 }
+*/
 
