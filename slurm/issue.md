@@ -48,38 +48,32 @@ slurmd: fatal: systemd scope for slurmstepd could not be set.
 [Unit]
 Description=Slurm node daemon
 After=network.target munge.service
-ConditionPathExists=/etc/slurm-llnl/slurm.conf
+ConditionPathExists=/usr/local/etc/slurm.conf
 Documentation=man:slurmd(8)
 
 [Service]
 Type=forking
-EnvironmentFile=-/etc/default/slurmd
 ExecStart=/usr/sbin/slurmd $SLURMD_OPTIONS
 ExecReload=/bin/kill -HUP $MAINPID
-PIDFile=/var/run/slurm-llnl/slurmd.pid
 KillMode=process
-LimitNOFILE=51200
-LimitMEMLOCK=infinity
-LimitSTACK=infinity
+
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-* /lib/systemd/system/slurmctld.service 
+* `/lib/systemd/system/slurmctld.service` 
 ```
 [Unit]
 Description=Slurm controller daemon
 After=network.target munge.service
-ConditionPathExists=/etc/slurm-llnl/slurm.conf
+ConditionPathExists=/usr/local/etc/slurm.conf
 Documentation=man:slurmctld(8)
 
 [Service]
 Type=forking
-EnvironmentFile=-/etc/default/slurmctld
 ExecStart=/usr/sbin/slurmctld $SLURMCTLD_OPTIONS
 ExecReload=/bin/kill -HUP $MAINPID
-PIDFile=/var/run/slurm-llnl/slurmctld.pid
 
 [Install]
 WantedBy=multi-user.target
