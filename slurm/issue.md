@@ -42,6 +42,7 @@ slurmd: error: slurmd initialization failed
 https://stackoverflow.com/questions/14263390/how-to-compile-a-basic-d-bus-glib-example
  
 sudo apt-get -y install dbus libdbus-1-dev libdbus-glib-1-2 libdbus-glib-1-dev
+slurm recompile with configure
 ```
 
 
