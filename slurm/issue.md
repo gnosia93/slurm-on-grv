@@ -57,7 +57,6 @@ ExecStart=/usr/sbin/slurmd $SLURMD_OPTIONS
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 
-
 [Install]
 WantedBy=multi-user.target
 ```
@@ -74,6 +73,7 @@ Documentation=man:slurmctld(8)
 Type=forking
 ExecStart=/usr/sbin/slurmctld $SLURMCTLD_OPTIONS
 ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
 
 [Install]
 WantedBy=multi-user.target
