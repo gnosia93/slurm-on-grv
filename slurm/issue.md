@@ -135,3 +135,6 @@ sudo mkdir -p /sys/fs/cgroup/system.slice/slurmstepd.scope
 sudo chmod -R 0777 /sys/fs/cgroup/system.slice/slurmstepd.scope
 chmod 0777 /sys/fs/cgroup/system.slice/slurmstepd.scope/slurmd/cgroup.procs
 ```
+
+* https://unix.stackexchange.com/questions/739049/limit-cpu-usage-with-cgroup-v2-as-non-root-user-permission-denied
+
