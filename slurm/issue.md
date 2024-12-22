@@ -43,8 +43,10 @@ https://stackoverflow.com/questions/14263390/how-to-compile-a-basic-d-bus-glib-e
 ```
 sudo apt-get -y install dbus libdbus-1-dev libdbus-glib-1-2 libdbus-glib-1-dev
 cd slurm-24.11.0
-make clean
 ./configure --enable-cgroupv2
+sudo make install
+ls /usr/local/lib/slurm/cgroup_v2.so
 ```
+/usr/local/lib/slurm/cgroup_v2.so
 
 
