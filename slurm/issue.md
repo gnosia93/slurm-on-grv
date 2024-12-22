@@ -98,4 +98,7 @@ sudo systemctl enable service-name        # 재부팅 후에도 서비스가 실
 sudo journalctl -u service-name           # 서비스와 관련된 로그 확인
 ```
 
+----
+
+https://askubuntu.com/questions/1058635/what-is-a-systemd-scope-for 
 
