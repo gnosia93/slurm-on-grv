@@ -48,7 +48,8 @@ systemd service 파일을 만든다.
 ```
 [Unit]
 Description=Slurm node daemon
-After=network.target munge.service
+After=network.target
+After=munge.service
 ConditionPathExists=/usr/local/etc/slurm.conf
 Documentation=man:slurmd(8)
 
@@ -69,7 +70,8 @@ WantedBy=multi-user.target
 ```
 [Unit]
 Description=Slurm controller daemon
-After=network.target munge.service
+After=network.target
+After=munge.service
 ConditionPathExists=/usr/local/etc/slurm.conf
 Documentation=man:slurmctld(8)
 
