@@ -36,6 +36,8 @@ slurmd: debug:  cgroup/v2: init: Cgroup v2 plugin loaded
 slurmd: debug3: Success.
 slurmd: fatal: systemd scope for slurmstepd could not be set.
 ```
+* https://slurm.schedmd.com/slurmstepd.html
+
 [solution]
 
 https://serverfault.com/questions/1003056/why-does-slurm-fail-to-start-with-systemd-but-work-when-starting-manually 
