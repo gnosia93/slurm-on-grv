@@ -85,12 +85,14 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
-
+아래는 systemctl 이 제공하는 명령어 리스트이다. 
+```
+systemctl reload service-name  
 systemctl start service-name         # 등록된 서비스 시작
 systemctl status service-name        # 등록된 서비스 상태 확인 
 systemctl stop service-name          # 등록된 서비스 종료 
 systemctl enable service-name        # 재부팅 후에도 서비스가 실행되도록 설정
 journalctl -u service-name           # 서비스와 관련된 로그 확인
-
+```
 
 
