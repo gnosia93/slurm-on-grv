@@ -9,6 +9,9 @@ sudo /usr/sbin/mungekey                              # make key in master server
 
 sudo chown munge:munge /etc/munge/munge.key          # all server
 sudo chmod 400 /etc/munge/munge.key                  # all server
+
+sudo systemctl enable munge                          # all server
+sudo systemctl start munge                           # all server
 ```
 
 
