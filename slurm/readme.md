@@ -12,6 +12,9 @@ sudo chmod 400 /etc/munge/munge.key                  # all server
 
 sudo systemctl enable munge                          # all server
 sudo systemctl start munge                           # all server
+
+sudo apt install -y slurm-wlm                        # master
+sudo apt install -y slurmd                           # worker nodes
 ```
 
 
