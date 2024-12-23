@@ -1,7 +1,7 @@
 * https://bgreat.tistory.com/185
 
 
-## master node ##
+## install with apt ##
 
 ```
 sudo apt install -y munge libmunge-dev               # all server.
