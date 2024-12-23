@@ -5,7 +5,7 @@
 
 ```
 sudo apt install -y munge libmunge-dev               # all server.
-sudo /usr/sbin/mungekey                              # copy /etc/munge/munge.key to all server
+sudo /usr/sbin/mungekey                              # make key in master server and copy /etc/munge/munge.key to all server
 
 sudo chown munge:munge /etc/munge/munge.key          # all server
 sudo chmod 400 /etc/munge/munge.key                  # all server
