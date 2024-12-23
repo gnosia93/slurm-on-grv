@@ -26,7 +26,8 @@ munge:*:20080:0:99999:7:::
 slurm:*:20080:0:99999:7:::
 ```
 
-[/etc/slurm-llnl/slurm.conf] of all nodes
+[/etc/slurm-llnl/slurm.conf] 
+* must exists in all nodes
 ```
 ControlMachine=sl-mst                      # hostname of master node
 AuthType=auth/munge                        # authentification with munge
@@ -58,7 +59,8 @@ NodeName=sle-w[1-2] CPUs=8 Boards=1 SocketsPerBoard=1 CoresPerSocket=8 ThreadsPe
 PartitionName=debug Nodes=sle-w[1-2] Default=YES MaxTime=INFINITE State=UP
 ```
 
-[/etc/slurm-llnl/cgroup.conf] of all nodes when using GPU, not required for CPU
+[/etc/slurm-llnl/cgroup.conf] 
+* must exist in all nodes in case of using GPU, and not required for CPU
 ```
 CgroupAutomount=yes 
 CgroupReleaseAgentDir="/etc/slurm-llnl/cgroup" 
@@ -68,7 +70,8 @@ ConstrainDevices=yes
 AllowedDevicesFile="/etc/slurm-llnl/cgroup_allowed_devices_file.conf"
 ```
 
-[/etc/slurm-llnl/cgroup_allowed_devices_file.conf] of all nodes all nodes when using GPU, not required for CPU
+[/etc/slurm-llnl/cgroup_allowed_devices_file.conf] 
+* must exist in all nodes in case of using GPU, and not required for CPU
 ```
 /dev/nvidiactl 
 /dev/nvidia-uvm 
