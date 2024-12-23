@@ -49,7 +49,7 @@ SlurmdPort=6818                            # slurm daemon port
 SlurmctldPort=6817                         # slurm controller daemon port 
 
 StateSaveLocation=/var/spool/slurm/state              # at the install time, not yet created
-SlurmdSpoolDir=/var/spool/slurmd
+SlurmdSpoolDir=/var/spool/slurm
 
 # 작업 자격 증명에 사용할 키 설정 
 JobCredentialPrivateKey=/var/spool/slurm/cred_priv.pem 
