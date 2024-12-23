@@ -1,5 +1,13 @@
 ## [Install /w apt](https://bgreat.tistory.com/185) ##
 
+[/etc/hosts]
+```
+10.0.101.186 sl-mst
+10.0.100.182 sle-w1
+```
+
+
+
 ```
 sudo apt install -y munge libmunge-dev               # all server.
 sudo /usr/sbin/mungekey                              # make key in master server and copy /etc/munge/munge.key to all server
