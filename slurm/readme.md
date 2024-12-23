@@ -79,7 +79,7 @@ PartitionName=debug Nodes=sle-w[1-2] Default=YES MaxTime=INFINITE State=UP
 * must exist in all nodes in case of using GPU, and not required for CPU
 ```
 CgroupAutomount=yes 
-CgroupReleaseAgentDir="/etc/slurm-llnl/cgroup" 
+CgroupReleaseAgentDir="/etc/slurm/cgroup" 
 ConstrainCores=yes 
 ConstrainRAMSpace=yes 
 ConstrainDevices=yes 
