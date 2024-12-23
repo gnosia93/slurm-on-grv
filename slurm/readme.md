@@ -17,6 +17,18 @@ sudo apt install -y slurm-wlm                        # master
 sudo apt install -y slurmd                           # worker nodes
 ```
 
+[passwd]
+```
+munge:x:117:122::/nonexistent:/usr/sbin/nologin
+slurm:x:64030:64030::/nonexistent:/usr/sbin/nologin
+```
+
+[shadow]
+```
+munge:*:20080:0:99999:7:::
+slurm:*:20080:0:99999:7:::
+```
+
 
 
 
