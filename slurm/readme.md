@@ -1,8 +1,6 @@
-## [Install /w apt](https://bgreat.tistory.com/185) ##
+## 1. [Install Using apt](https://bgreat.tistory.com/185) ##
 
-
-### 1. append node hostname ###
-
+### 1-1. append node hostname ###
 
 [/etc/hosts]
 ```
@@ -11,7 +9,7 @@
 10.0.100.20  sle-w2
 ```
 
-### 2. install munge and slurm ###
+### 1-2. install munge and slurm ###
 ```
 sudo apt install -y munge libmunge-dev               # all nodes
 sudo /usr/sbin/mungekey                              # make key in master node 
@@ -43,7 +41,7 @@ munge:*:20080:0:99999:7:::
 slurm:*:20080:0:99999:7:::
 ```
 
-### 3. make configuration at all nodes ###
+### 1-3. make configuration at all nodes ###
 
 [/etc/slurm/slurm.conf] 
 ```
@@ -99,8 +97,7 @@ ConstrainDevices=yes
 /dev/nvidia1 ...
 ```
 
-
-### 4. start slurm ###
+### 1-4. start slurm ###
 
 start slurmctld at master and slurmd daemon at worker nodes.
 
@@ -112,16 +109,10 @@ sudo slurmctld -D -vvvvvv
 ```
 sudo slurmd -D -vvvvvv 
 ```
-```
 
 
 
-
-
-
-
-
-## Install /w source ##
+## 2. Install From Source ##
 
 * Make sure the clocks, users and groups (UIDs and GIDs) are synchronized across the cluster.
     * clocks (time) synchronization is fullfilled usually by NTP, but when you are using public cloud service such as AWS, you don't need to setup clocks synchronization.
