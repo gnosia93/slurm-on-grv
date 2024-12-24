@@ -128,17 +128,7 @@ apt search nvidia-driver
 ```
 
 ```
-nvidia-driver-550/jammy,now 550.142-0ubuntu0~gpu22.04.1 arm64 [installed]
-  NVIDIA driver metapackage
-
-nvidia-driver-550-open/jammy 550.142-0ubuntu0~gpu22.04.1 arm64
-  NVIDIA driver (open kernel) metapackage
-
-nvidia-driver-550-server/jammy-updates 550.127.08-0ubuntu0.22.04.1 arm64
-  NVIDIA Server Driver metapackage
-
-nvidia-driver-550-server-open/jammy-updates 550.127.08-0ubuntu0.22.04.1 arm64
-  NVIDIA driver (open kernel) metapackage
+...
 
 nvidia-driver-560/jammy 560.35.03-0ubuntu0~gpu22.04.4 arm64
   NVIDIA driver metapackage
@@ -167,9 +157,9 @@ The main differences that I can identify (from the Ubuntu package lists) are the
 
 #### 1-6-2 install nvidia driver with latest version ####
 ```
-sudo apt install -y nvidia-driver-560
+sudo apt install -y nvidia-driver-565
 sudo apt install -y nvidia-cuda-toolkit
-sudo apt install -y nvidia-utils-560
+sudo apt install -y nvidia-utils-565
 ```
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/nvidia-smi.png)
