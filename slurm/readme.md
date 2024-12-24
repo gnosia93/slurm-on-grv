@@ -43,11 +43,9 @@ munge:*:20080:0:99999:7:::
 slurm:*:20080:0:99999:7:::
 ```
 
+### 3. make configuration at all nodes ###
+
 [/etc/slurm/slurm.conf] 
-```
-sudo vi /etc/slurm/slurm.conf
-```
-* must exists in all nodes
 ```
 ControlMachine=sl-mst                      # hostname of master node
 AuthType=auth/munge                        # authentification with munge
@@ -101,24 +99,22 @@ ConstrainDevices=yes
 /dev/nvidia1 ...
 ```
 
-start slurmctld and slurmd daemon.
+
+### 4. start slurm ###
+
+start slurmctld at master and slurmd daemon at worker nodes.
+
+* master node
 ```
-ubuutu$ sudo slurmctld -D -vvvvvv                 # unbutu 로 실행하면 에러가 발생한다. 
-ubuntu$ sudo slurmd -D -vvvvvv 
+sudo slurmctld -D -vvvvvv                  
 ```
+* worker node
 ```
-$ ubuntu ps aux | grep slurmctld
-root       46685  0.0  0.0 280808  5668 ?        Sl   17:02   0:00 slurmctld -vvvvvv
+sudo slurmd -D -vvvvvv 
+```
 ```
 
-* Master Node
-     ```
-     sudo slurmctld -D -vvvvvv
-     ```
-* Worker Node
-     ```
-     sudo slurmd -D -vvvvvv
-     ```
+
 
 
 
