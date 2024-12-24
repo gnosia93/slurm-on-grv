@@ -1,7 +1,6 @@
 #! /bin/bash
 sudo apt update
-sudo apt install -y net-tools git 
-sudo apt install -y make binutils 
+sudo apt install -y net-tools git make binutils 
 sudo apt install -y pkg-config 
 sudo apt install -y libssl-dev 
 sudo apt install -y cargo 
