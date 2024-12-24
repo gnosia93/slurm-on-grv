@@ -15,7 +15,7 @@ sudo hostnamectl set-hostname ${HOST_NAME} >> /home/ubuntu/userdata_output.txt 2
 sudo sed -i '/127.0.0.1 localhost/ s/$/ ${HOST_NAME}/' /etc/hosts >> /home/ubuntu/userdata_output.txt 2>&1
 sudo echo ${EFS_ID} >> /home/ubuntu/userdata_output.txt 2>&1
 sudo echo ${HOST_NAME} >> /home/ubuntu/userdata_output.txt 2>&1
-sudo echo "${EFS_ID}:/ /mnt/efs efs _netdev,noresvport 0 0" >> /etc/fstab
+sudo echo "${EFS_ID}:/ /mnt/efs efs _netdev,noresvport,tls 0 0" >> /etc/fstab
 
 #cloud-config	
 #runcmd:
