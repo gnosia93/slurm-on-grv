@@ -82,13 +82,15 @@ SelectTypeParameters=CR_Core_Memory
 TaskPlugin=task/affinity 
 
 ClusterName=workshop
+
 NodeName=sle-w[1-2] CPUs=8 Boards=1 SocketsPerBoard=1 CoresPerSocket=8 ThreadsPerCore=1 RealMemory=15672     # slurmd -C in worker node
+
 GresTypes=gpu
 NodeName=slx-w[1-2] Gres=gpu:1 CPUs=8 Boards=1 SocketsPerBoard=1 CoresPerSocket=8 ThreadsPerCore=1 RealMemory=15672     # slurmd -C in worker node
+
 PartitionName=debug Nodes=sle-w[1-2] Default=YES MaxTime=INFINITE State=UP
 PartitionName=cpu Nodes=sle-w[1-2] Default=YES MaxTime=INFINITE State=UP
 PartitionName=gpu Nodes=slx-w[1-2] Default=YES MaxTime=INFINITE State=UP
-
 ```
 Type slurmd -C at worker node to retrieve hardware spec for `NodeName` in slurm.conf.
 
