@@ -299,4 +299,7 @@ scontrol show nodes
   * eg. sudo systemctl start slurmctld
 
 
+## 레퍼런스 ##
+
+* https://blog.liam.kim/posts/2024/05/Slurm-Setup-Guide/
 
