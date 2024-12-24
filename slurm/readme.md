@@ -46,7 +46,7 @@ slurm:*:20080:0:99999:7:::
 
 ### 1-3. make configuration at all nodes ###
 
-[/etc/slurm/slurm.conf] 
+**[/etc/slurm/slurm.conf]**
 ```
 ControlMachine=sl-mst                      # hostname of master node
 AuthType=auth/munge                        # authentification with munge
@@ -82,8 +82,7 @@ PartitionName=debug Nodes=sle-w[1-2] Default=YES MaxTime=INFINITE State=UP
 Type slurmd -C at worker node to retrieve hardware spec for `NodeName` in slurm.conf.
 
 
-
-[/etc/slurm/cgroup.conf] 
+**[/etc/slurm/cgroup.conf]** 
 * must exist in all nodes, for GPU node cgroup_allowed_devices_file.conf is required
 ```
 CgroupAutomount=yes 
@@ -94,7 +93,7 @@ ConstrainDevices=yes
 #AllowedDevicesFile="/etc/slurm-llnl/cgroup_allowed_devices_file.conf"           # for GPU node, uncomment this line
 ```
 
-[/etc/slurm/cgroup_allowed_devices_file.conf] 
+**[/etc/slurm/cgroup_allowed_devices_file.conf]** 
 * must exist in all nodes in case of using GPU, and not required for CPU
 ```
 /dev/nvidiactl 
