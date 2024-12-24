@@ -121,8 +121,8 @@ sudo apt install slurm-client
 
 ### 1-6. Add Nvidia GPU Node ###
 ```
-sudo apt serach nvidia
-sudo apt install -y nvidia-550..
+apt serach nvidia-driver
+sudo apt install nvidia-driver-550
 ```
 
 
