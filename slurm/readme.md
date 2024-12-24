@@ -173,6 +173,9 @@ sudo apt install -y nvidia-utils-565
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/nvidia-lshw.png)
 
+#### 1-6-3 add gpu information ####
+
+* https://stackoverflow.com/questions/76492996/how-to-add-nvidia-gpu-on-slurm-conf-and-gres-conf
 
 ## 2. Install From Source ##
 
