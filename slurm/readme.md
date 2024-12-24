@@ -119,6 +119,10 @@ sudo apt install slurm-client
 ```
 
 
+### 1-6. Add Nvidia GPU Node ###
+```
+```
+
 
 
 ## 2. Install From Source ##
