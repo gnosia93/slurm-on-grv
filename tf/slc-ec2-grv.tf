@@ -103,12 +103,12 @@ module "slc-wg" {
 }
 
 
-output "slc-mst" {
+output "master" {
   value = [for instance in module.slc-mst : instance.public_ip]
 }
 
 
-output "slc-wg" {
+output "graviton-workers" {
   value = [for instance in module.slc-wg : instance.public_ip]
 }
 
