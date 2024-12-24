@@ -79,6 +79,9 @@ ClusterName=workshop
 NodeName=sle-w[1-2] CPUs=8 Boards=1 SocketsPerBoard=1 CoresPerSocket=8 ThreadsPerCore=1 RealMemory=15672     # slurmd -C in worker node
 PartitionName=debug Nodes=sle-w[1-2] Default=YES MaxTime=INFINITE State=UP
 ```
+Type slurmd -C at worker node for retrieve system spec for NodeName line.
+
+
 
 [/etc/slurm/cgroup.conf] 
 * must exist in all nodes, for GPU node cgroup_allowed_devices_file.conf is required
