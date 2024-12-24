@@ -124,9 +124,50 @@ sudo apt install slurm-client
 sudo add-apt-repository ppa:graphics-drivers/ppa --yes
 sudo apt update
 apt search nvidia-driver
-sudo apt install nvidia-driver-550
+```
+
+```
+nvidia-driver-550/jammy,now 550.142-0ubuntu0~gpu22.04.1 arm64 [installed]
+  NVIDIA driver metapackage
+
+nvidia-driver-550-open/jammy 550.142-0ubuntu0~gpu22.04.1 arm64
+  NVIDIA driver (open kernel) metapackage
+
+nvidia-driver-550-server/jammy-updates 550.127.08-0ubuntu0.22.04.1 arm64
+  NVIDIA Server Driver metapackage
+
+nvidia-driver-550-server-open/jammy-updates 550.127.08-0ubuntu0.22.04.1 arm64
+  NVIDIA driver (open kernel) metapackage
+
+nvidia-driver-560/jammy 560.35.03-0ubuntu0~gpu22.04.4 arm64
+  NVIDIA driver metapackage
+
+nvidia-driver-560-open/jammy 560.35.03-0ubuntu0~gpu22.04.4 arm64
+  NVIDIA driver (open kernel) metapackage
+
+nvidia-driver-565/jammy 565.77-0ubuntu0~gpu22.04.1 arm64
+  NVIDIA driver metapackage
+
+nvidia-driver-565-open/jammy 565.77-0ubuntu0~gpu22.04.1 arm64
+  NVIDIA driver (open kernel) metapackage
+
+nvidia-driver-565-server/jammy-updates 565.57.01-0ubuntu0.22.04.4 arm64
+  NVIDIA Server Driver metapackage
+
+nvidia-driver-565-server-open/jammy-updates 565.57.01-0ubuntu0.22.04.4 arm64
+  NVIDIA driver (open kernel) metapackage
+```
+
+
+````
+sudo apt install nvidia-driver-560
 sudo apt install nvidia-cuda-toolkit
-sudo apt install nvidia-utils-550
+sudo apt install nvidia-utils-560
+```
+```
+sudo apt install nvidia-headless-no-dkms-565
+sudo apt install nvidia-utils-565
+
 ```
 
 
