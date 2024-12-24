@@ -82,6 +82,7 @@ module "slurm-master" {
   }
 }
 
+/*
 module "slurm-worker-grv" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
@@ -116,16 +117,18 @@ module "slurm-worker-grv" {
     Environment = "dev"
   }
 }
+*/
 
-/*
-module "slurm-worker" {
+
+module "slurm-worker-nvidia" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  for_each = toset(["w1", "w2", "w3"])
+  for_each = toset(["w1", "w2"])
   name = "slx-${each.key}"
 
   instance_type          = "g5g.xlarge"
-  ami                    = data.aws_ami.ubuntu-arm64-nvidia.id
+ # ami                    = data.aws_ami.ubuntu-arm64-nvidia.id
+  ami                    = data.aws_ami.ubuntu-arm.id
   key_name               = var.key_pair
   monitoring             = true
   vpc_security_group_ids = [module.ec2_sg.security_group_id]
@@ -152,22 +155,23 @@ module "slurm-worker" {
     Environment = "dev"
   }
 }
-*/
 
 
 output "master" {
   value = [for instance in module.slurm-master : instance.public_ip]
 }
 
+/*
 output "workers-cpu" {
   value = [for instance in module.slurm-worker-grv : instance.public_ip]
 }
+*/
 
-/*
 output "workers-gpu" {
-  value = [for instance in module.slurm-worker : instance.public_ip]
+  value = [for instance in module.slurm-worker-nvidia : instance.public_ip]
 }
 
+/*
 output "efs-id" {
   value = module.efs.id
 }
