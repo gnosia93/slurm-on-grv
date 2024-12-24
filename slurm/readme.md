@@ -120,7 +120,7 @@ sudo apt install slurm-client
 
 
 ### 1-6. Add Nvidia GPU Node ###
-* add ppa repository
+#### 1-6-1. add ppa repository ####
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa --yes
 sudo apt update
@@ -165,7 +165,7 @@ The main differences that I can identify (from the Ubuntu package lists) are the
 * NVIDIA headless drivers are a small subset, meant only for GPU computational tasks (but not graphics display). This package is also supported for up to 1 year (oldest version is 470).
 
 
-* install nvidia driver with latest version
+#### 1-6-2 install nvidia driver with latest version ####
 ```
 sudo apt install -y nvidia-driver-560
 sudo apt install -y nvidia-cuda-toolkit
