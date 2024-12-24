@@ -158,6 +158,12 @@ nvidia-driver-565-server/jammy-updates 565.57.01-0ubuntu0.22.04.4 arm64
 nvidia-driver-565-server-open/jammy-updates 565.57.01-0ubuntu0.22.04.4 arm64
   NVIDIA driver (open kernel) metapackage
 ```
+The main differences that I can identify (from the Ubuntu package lists) are the following:
+
+* NVIDIA drivers have the full set of packages, and is supported for up to 1 year (oldest version right now is 470 - previous versions point to this release).
+* NVIDIA server drivers have the full set of packages as well, and is supported up to 2 years (oldest version right now is 450 - previous versions point to this release).
+* NVIDIA headless drivers are a small subset, meant only for GPU computational tasks (but not graphics display). This package is also supported for up to 1 year (oldest version is 470).
+
 
 * install nvidia driver with latest version
 ```
