@@ -1,5 +1,9 @@
 ## [Install /w apt](https://bgreat.tistory.com/185) ##
 
+
+### 1. append node hostname ###
+
+
 [/etc/hosts]
 ```
 10.0.101.186 sl-mst
@@ -7,28 +11,32 @@
 10.0.100.20  sle-w2
 ```
 
-execute below command
+### 2. install munge and slurm ###
 ```
-sudo apt install -y munge libmunge-dev               # all server.
-sudo /usr/sbin/mungekey                              # make key in master server 
-sudo cp /etc/munge/munge.key /mnt/efs                # copy /etc/munge/munge.key to all server
-sudo cp /mnt/efs/munge.key /etc/munge/munge.key      # worker nodes
+sudo apt install -y munge libmunge-dev               # all nodes
+sudo /usr/sbin/mungekey                              # make key in master node 
+sudo cp /etc/munge/munge.key /mnt/efs                # copy /etc/munge/munge.key to worker nodes
+sudo cp /mnt/efs/munge.key /etc/munge/munge.key      
 
-sudo chown munge:munge /etc/munge/munge.key          # all server
-sudo chmod 400 /etc/munge/munge.key                  # all server
-sudo systemctl enable munge                          # all server
-sudo systemctl start munge                           # all server
+sudo chown munge:munge /etc/munge/munge.key          # all nodes
+sudo chmod 400 /etc/munge/munge.key                  # all nodes
+sudo systemctl enable munge                          # all nodes
+sudo systemctl start munge                           # all nodes
 
 sudo apt install -y slurm-wlm                        # master
 sudo apt install -y slurmd                           # worker nodes
+
+sudo mkdir /var/spool/slurm && \                     # all nodes
+sudo chown slurm:slurm /var/spool/slurm && \
+sudo chmod 777 /var/spool/slurm
 ```
 
+* (optional) check passwd and shadow file
 [passwd]
 ```
 munge:x:117:122::/nonexistent:/usr/sbin/nologin               
 slurm:x:64030:64030::/nonexistent:/usr/sbin/nologin
 ```
-
 [shadow]
 ```
 munge:*:20080:0:99999:7:::
@@ -38,10 +46,6 @@ slurm:*:20080:0:99999:7:::
 [/etc/slurm/slurm.conf] 
 ```
 sudo vi /etc/slurm/slurm.conf
-
-sudo mkdir /var/spool/slurm && \
-sudo chown slurm:slurm /var/spool/slurm && \
-sudo chmod 777 /var/spool/slurm
 ```
 * must exists in all nodes
 ```
