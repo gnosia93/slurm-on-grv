@@ -126,6 +126,7 @@ sudo apt update
 apt search nvidia-driver
 sudo apt install nvidia-driver-550
 sudo apt install nvidia-cuda-toolkit
+sudo apt install nvidia-utils-550
 ```
 
 
