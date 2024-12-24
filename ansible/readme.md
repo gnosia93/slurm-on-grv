@@ -29,7 +29,7 @@ $ ansible-playbook playbook.yml -i ansible_hosts --user ubuntu --key-file ~/aws-
   * ~/.ansible.cfg (in the home directory)
   * /etc/ansible/ansible.cfg
 
-* skip-ssh-first-connection
+* How to ignore ansible SSH authenticity checking
   * https://stackoverflow.com/questions/32297456/how-to-ignore-ansible-ssh-authenticity-checking
   * https://stackoverflow.com/questions/71712244/ansible-how-do-you-properly-skip-ssh-first-connection-to-fresh-host
 
