@@ -1,3 +1,7 @@
+## Failed to initialize NVML: Driver/library version mismatch NVML library version: 565.77 ##
+
+reboot 
+
 ## slurmd: error: Couldn't find the specified plugin name for cgroup/v2 looking at all files ##
 [problem]
 ```
