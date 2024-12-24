@@ -29,6 +29,10 @@ $ ansible-playbook playbook.yml -i ansible_hosts --user ubuntu --key-file ~/aws-
   * ~/.ansible.cfg (in the home directory)
   * /etc/ansible/ansible.cfg
 
+* skip-ssh-first-connection
+  * https://stackoverflow.com/questions/32297456/how-to-ignore-ansible-ssh-authenticity-checking
+  * https://stackoverflow.com/questions/71712244/ansible-how-do-you-properly-skip-ssh-first-connection-to-fresh-host
+
 * Create user with option --disabled-password by Ansible
   * https://stackoverflow.com/questions/39013796/create-user-with-option-disabled-password-by-ansible
   * https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
