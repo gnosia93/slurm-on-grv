@@ -1,4 +1,4 @@
-## 1. [Install Using apt](https://bgreat.tistory.com/185) ##
+## 1. [Install using apt](https://bgreat.tistory.com/185) ##
 
 * efs 마운트 정보를 fstab 에 넣어야 한다. reboot 해도 마운트 되도록 한다. 
 ```
@@ -187,7 +187,10 @@ sinfo -o "%20N  %10c  %10m  %25f  %10G "
 NODELIST              CPUS        MEMORY      AVAIL_FEATURES             GRES
 slx-w[1-2]            4           7763        (null)                     (null)
 ```
+```
+scontrol show nodes 
 
+```
 
 
 
