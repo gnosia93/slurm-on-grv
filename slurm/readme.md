@@ -120,6 +120,7 @@ sudo apt install slurm-client
 
 
 ### 1-6. Add Nvidia GPU Node ###
+* add ppa repository
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa --yes
 sudo apt update
@@ -158,17 +159,13 @@ nvidia-driver-565-server-open/jammy-updates 565.57.01-0ubuntu0.22.04.4 arm64
   NVIDIA driver (open kernel) metapackage
 ```
 
-
+* install nvidia driver with 
 ```
 sudo apt install nvidia-driver-560
 sudo apt install nvidia-cuda-toolkit
 sudo apt install nvidia-utils-560
 ```
-```
-sudo apt install nvidia-headless-no-dkms-565
-sudo apt install nvidia-utils-565
 
-```
 
 
 
