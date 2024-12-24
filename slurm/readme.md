@@ -214,9 +214,4 @@ sudo slurmd -D -vvvvvv
   * eg. sudo systemctl start slurmctld
 
 
- 
-## reference ##
-* https://slurm.schedmd.com/quickstart_admin.html
-* https://github.com/lopentusska/slurm_ubuntu_gpu_cluster
-* https://github.com/nateGeorge/slurm_gpu_ubuntu?tab=readme-ov-file
-* https://github.com/mknoxnv/ubuntu-slurm
+
