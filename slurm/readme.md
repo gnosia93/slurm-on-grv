@@ -16,6 +16,8 @@ sudo cp /mnt/efs/munge.key /etc/munge/munge.key      # worker nodes
 
 sudo chown munge:munge /etc/munge/munge.key          # all server
 sudo chmod 400 /etc/munge/munge.key                  # all server
+sudo systemctl restart munge                         # all server
+
 
 sudo systemctl enable munge                          # all server
 sudo systemctl start munge                           # all server
