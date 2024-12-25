@@ -34,7 +34,7 @@
           state: present
       - name: make mungekey at master
         shell: |
-          sudo rm -rf /etc/munge/munge.key
+#          sudo rm -rf /etc/munge/munge.key
           sudo /usr/sbin/mungekey                              
           sudo cp /etc/munge/munge.key /mnt/efs  
           sudo chown munge:munge /etc/munge/munge.key          
