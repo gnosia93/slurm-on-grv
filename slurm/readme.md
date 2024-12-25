@@ -162,7 +162,7 @@ sudo apt install -y nvidia-utils-565
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/nvidia-lshw.png)
 
-#### [1-6-3 add gpu information](https://slurm.schedmd.com/gres.html) ####
+#### [1-6-3 add gpu configuration in slurm.conf and gres.conf](https://slurm.schedmd.com/gres.html) ####
 
 * https://stackoverflow.com/questions/76492996/how-to-add-nvidia-gpu-on-slurm-conf-and-gres-conf
 
@@ -171,8 +171,9 @@ sudo apt install -y nvidia-utils-565
 ldconfig -p | grep libnvidia-ml.so
 ```
 
-* add gpu info into slurm.conf and gres.conf, see upper configuration
+* add gpu info into slurm.conf and gres.conf, see upper configuration (at 1-3. make configuration at all nodes)
 
+#### 1-6-4 install pytorch ####
 
 
 
