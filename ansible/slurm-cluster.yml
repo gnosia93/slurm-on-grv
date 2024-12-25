@@ -81,7 +81,7 @@
           state: started
 
 - name: install nvidia-driver
-  hosts: slc-wn1 slc-wn2
+  hosts: nvidia-workers
   become: yes
   tasks:
     - ansible.builtin.apt:
