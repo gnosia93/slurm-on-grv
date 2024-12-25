@@ -192,7 +192,21 @@ for the prompts, say always 'yes'
 sudo apt-get -y install cuda-toolkit-12-4
 ```
 
+* install pytorch framework
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+```
 
+* check pytorch
+```
+$ python
+Python 3.6.10 |Anaconda, Inc.| (default, May  8 2020, 02:54:21) 
+[GCC 7.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> print(torch.cuda.is_available())
+True
+```
 
 
 
