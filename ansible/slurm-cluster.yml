@@ -81,7 +81,7 @@
           state: started
 
 - name: install nvidia-driver
-  hosts: nvidia-workers
+  hosts: nvidia_workers
   become: yes
   tasks:
     - shell: |
