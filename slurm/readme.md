@@ -71,7 +71,7 @@ TaskPlugin=task/affinity
 
 ClusterName=workshop
 
-NodeName=slc-wg[1-2] CPUs=16 Boards=1 SocketsPerBoard=1 CoresPerSocket=16 ThreadsPerCore=1 RealMemory=31491     # slurmd -C in worker node
+NodeName=slc-wg[1-2] CPUs=4 Boards=1 SocketsPerBoard=1 CoresPerSocket=4 ThreadsPerCore=1 RealMemory=7763     # slurmd -C in worker node
 
 GresTypes=gpu
 NodeName=slc-wn[1-2] Gres=gpu:1 CPUs=4 Boards=1 SocketsPerBoard=1 CoresPerSocket=4 ThreadsPerCore=1 RealMemory=7763     # slurmd -C in worker node
