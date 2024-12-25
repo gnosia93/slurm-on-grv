@@ -143,7 +143,26 @@
       copy:
         src: ~/slurm-on-grv/slurm/conf/gres.conf
         dest: /etc/slurm
+
+- name: slurmctld service
+  hosts: master 
+  become: yes
+  tasks:
+    - name: copy slurmctld.service
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/slurmctld.service
+        dest: /etc/slurm
   
-    
+- name: slurmd service
+  hosts: gravition_workers nvidia_workers
+  become: yes
+  tasks:
+    - name: copy slurmd.service
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/slurmd.service
+        dest: /etc/slurm
+
+
+
 
           
