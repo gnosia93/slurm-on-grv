@@ -152,7 +152,12 @@
       copy:
         src: ~/slurm-on-grv/slurm/conf/slurmctld.service
         dest: /lib/systemd/system
-  
+    - name: enable slurmctld service
+        ansible.builtin.systemd_service:
+          name: slurmctld
+          enabled: true
+          state: started
+    
 - name: slurmd service
   hosts: gravition_workers nvidia_workers
   become: yes
@@ -161,7 +166,11 @@
       copy:
         src: ~/slurm-on-grv/slurm/conf/slurmd.service
         dest: /lib/systemd/system
-
+    - name: enable slurmd service
+        ansible.builtin.systemd_service:
+          name: slurmd
+          enabled: true
+          state: started
 
 
 
