@@ -153,10 +153,10 @@
         src: ~/slurm-on-grv/slurm/conf/slurmctld.service
         dest: /lib/systemd/system
     - name: enable slurmctld service
-      shell: |
-        sudo systemctl enable slurmctld
-        sudo systemctl stop slurmctld
-        sudo systemctl start slurmctld 
+      systemd_service:
+          name: slurmctld
+          enabled: true
+          state: started
 
 - name: slurmd service
   hosts: graviton_workers nvidia_workers
@@ -167,10 +167,10 @@
         src: ~/slurm-on-grv/slurm/conf/slurmd.service
         dest: /lib/systemd/system
     - name: enable slurmd service
-      shell: |
-        sudo systemctl enable slurmd
-        sudo systemctl stop slurmd
-        sudo systemctl start slurmd 
+      systemd_service:
+          name: slurmd
+          enabled: true
+          state: started
 
 
           
