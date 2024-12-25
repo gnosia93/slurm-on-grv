@@ -82,21 +82,21 @@
           group: slurm
           mode: '0777'
 
-- name: install nvidia-driver
-  hosts: nvidia_workers
-  become: yes
-  tasks:
-    - shell: |
-        sudo add-apt-repository ppa:graphics-drivers/ppa --yes
-        sudo apt update  
-    - ansible.builtin.apt:
-        pkg:
-          - nvidia-driver-565
-          - nvidia-cuda-toolkit
-          - nvidia-utils-565
-        state: present
-    - shell:
-        sudo nvidia-smi
+#- name: install nvidia-driver
+#  hosts: nvidia_workers
+#  become: yes
+#  tasks:
+#    - shell: |
+#        sudo add-apt-repository ppa:graphics-drivers/ppa --yes
+#        sudo apt update  
+#    - ansible.builtin.apt:
+#        pkg:
+#          - nvidia-driver-565
+#          - nvidia-cuda-toolkit
+#          - nvidia-utils-565
+#        state: present
+#    - shell:
+#        sudo nvidia-smi
 
 - name: install munge and slurmd in client
   hosts: client 
