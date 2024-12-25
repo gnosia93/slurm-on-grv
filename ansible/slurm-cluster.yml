@@ -93,8 +93,9 @@
           - nvidia-cuda-toolkit
           - nvidia-utils-565
         state: present
-     - shell:
-       sudo nvidia-smi
+     - name: execute nvidia-smi
+       shell:
+         sudo nvidia-smi
 
 - name: install munge and slurmd in client
   hosts: client 
