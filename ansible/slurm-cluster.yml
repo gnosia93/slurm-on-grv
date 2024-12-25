@@ -84,6 +84,9 @@
   hosts: nvidia-workers
   become: yes
   tasks:
+    - shell: |
+        sudo add-apt-repository ppa:graphics-drivers/ppa --yes
+        sudo apt update
     - ansible.builtin.apt:
         pkg:
           - nvidia-driver-565
