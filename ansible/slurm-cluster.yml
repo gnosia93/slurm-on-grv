@@ -39,10 +39,6 @@
           sudo cp /etc/munge/munge.key /mnt/efs  
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
-          
-          if [[ ! -d /var/spool/slurm ]] ; then     sudo mkdir /var/spool/slurm; fi                     
-          sudo chown slurm:slurm /var/spool/slurm 
-          sudo chmod 777 /var/spool/slurm
           sudo systemctl stop munge
           sudo systemctl start munge
       - name: enable service
@@ -68,10 +64,6 @@
           sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
-          
-          if [[ ! -d /var/spool/slurm ]] ; then     sudo mkdir /var/spool/slurm; fi                     
-          sudo chown slurm:slurm /var/spool/slurm 
-          sudo chmod 777 /var/spool/slurm
           sudo systemctl stop munge
           sudo systemctl start munge
       - name: enable service
@@ -79,6 +71,17 @@
           name: munge
           enabled: true
           state: started
+
+- name: create /var/spool/slurm directory
+  hosts: master workers
+  become: yes
+  tasks:
+      - ansible.builtin.file:
+          path: /var/spool/slurm
+          state: directory
+          owner: slurm
+          group: slurm
+          mode: '0777'
 
 - name: install nvidia-driver
   hosts: nvidia_workers
