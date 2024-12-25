@@ -74,7 +74,7 @@ ClusterName=workshop
 NodeName=slc-wg[1-2] CPUs=16 Boards=1 SocketsPerBoard=1 CoresPerSocket=16 ThreadsPerCore=1 RealMemory=31491     # slurmd -C in worker node
 
 GresTypes=gpu
-NodeName=slc-wn[1-2] Gres=gpu:1 CPUs=8 Boards=1 SocketsPerBoard=1 CoresPerSocket=8 ThreadsPerCore=1 RealMemory=15672     # slurmd -C in worker node
+NodeName=slc-wn[1-2] Gres=gpu:1 CPUs=4 Boards=1 SocketsPerBoard=1 CoresPerSocket=4 ThreadsPerCore=1 RealMemory=7763     # slurmd -C in worker node
 
 PartitionName=graviton Nodes=sle-wg[1-2] Default=YES MaxTime=INFINITE State=UP
 PartitionName=nvidia Nodes=slx-wn[1-2] Default=YES MaxTime=INFINITE State=UP
