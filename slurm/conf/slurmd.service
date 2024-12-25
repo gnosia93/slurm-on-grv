@@ -7,8 +7,8 @@ Documentation=man:slurmd(8)
 
 [Service]
 Type=forking
-User=slurm
-Group=slurm
+User=root
+Group=root
 ExecStart=/usr/sbin/slurmd
 PIDFile=/var/log/slurm/slurmd.pid
 Restart=on-failure 
