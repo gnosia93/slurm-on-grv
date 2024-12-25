@@ -4,8 +4,8 @@
     - debug:
         msg: "{{ ansible_hostname }}:{{ ansible_default_ipv4.address }}"
     - debug:
-        msg: "{{ mount_point }} is not mounted"
-      when: ansible_mounts | selectattr('mount', 'equalto', '/mnt/efs') | list | length == 0
+        msg: "{{ mount_point }} is mounted"
+      when: ansible_mounts | selectattr('mount', 'equalto', '/mnt/efs') | list | length > 0
 
         
 - name: gather cluster node information and update /etc/hosts of each node
