@@ -97,15 +97,15 @@
   hosts: all
   become: yes
   tasks:
-    - name: slurm.conf
+    - name: copy slurm.conf
       copy:
         src: ~/slurm-on-grv/slurm/conf/slurm.conf
         dest: /etc/slurm
-    - name: cgroup.conf
+    - name: copy cgroup.conf
       copy:
         src: ~/slurm-on-grv/slurm/conf/cgroup.conf
         dest: /etc/slurm    
-    - name: gres.conf
+    - name: copy gres.conf
       copy:
         src: ~/slurm-on-grv/slurm/conf/gres.conf
         dest: /etc/slurm
