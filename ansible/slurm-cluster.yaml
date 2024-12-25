@@ -17,7 +17,7 @@
         {{ hostvars[host]['ansible_facts']['ens5']['ipv4']['address'] }} {{ hostvars[host]['ansible_facts']['hostname'] }} 
         {% endfor %}
 
-- name: install munge and slurm in master
+- name: install munge and slurmctld in master
   hosts: master
   become: yes
   tasks:
@@ -42,7 +42,32 @@
           name: munge
           enabled: true
           state: started
-  
+
+- name: install munge and slurmd in client and workers
+  hosts: client workers
+  become: yes
+  tasks:
+      - name: install
+        ansible.builtin.apt:
+          pkg:
+          - munge 
+          - libmunge-dev 
+          - slurmd
+          state: present
+      - name: copy mungekey from master
+        shell: |
+          sudo cp /mnt/efsmunge.key /etc/munge/munge.key   
+          sudo chown munge:munge /etc/munge/munge.key          
+          sudo chmod 400 /etc/munge/munge.key
+          sudo mkdir /var/spool/slurm                  
+          sudo chown slurm:slurm /var/spool/slurm 
+          sudo chmod 777 /var/spool/slurm
+      - name: enable service
+        ansible.builtin.systemd_service:
+          name: munge
+          enabled: true
+          state: started
+
 - name: copy configuration to slurm cluster
   hosts: all
   become: yes
