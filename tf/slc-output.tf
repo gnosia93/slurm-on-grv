@@ -1,9 +1,9 @@
 output "master" {
-  value = values(module.slc-mst)[0].public_ip
+  value = values(module.slc-mst)[1].public_ip
 }
 
 output "client" {
-  value = values(module.slc-mst)[1].public_ip
+  value = values(module.slc-mst)[0].public_ip
 }
 
 output "graviton-workers" {
