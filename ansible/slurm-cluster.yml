@@ -68,19 +68,20 @@
           sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
+          
           if [[ ! -d /var/spool/slurm ]] ; then     sudo mkdir /var/spool/slurm; fi                     
           sudo chown slurm:slurm /var/spool/slurm 
           sudo chmod 777 /var/spool/slurm
-          #!/usr/bin/bash
-          if [[ `hostname` =~ slc-wn[0-9]* ]]; then
-            sudo add-apt-repository ppa:graphics-drivers/ppa --yes
-            sudo apt update
-            sudo apt install -y nvidia-driver-565
-            sudo apt install -y nvidia-cuda-toolkit
-            sudo apt install -y nvidia-utils-565
-          fi
           sudo systemctl stop munge
           sudo systemctl start munge
+      - name: install nvidia-driver
+        hosts: slc-wn1 slc-wn2
+        ansible.builtin.apt:
+          pkg:
+            - nvidia-driver-565
+            - nvidia-cuda-toolkit
+            - nvidia-utils-565
+          state: present
       - name: enable service
         ansible.builtin.systemd_service:
           name: munge
