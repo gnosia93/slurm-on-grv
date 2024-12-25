@@ -5,13 +5,10 @@
 [client]
 3.35.168.125
 
-[workers]
+[gravition_workers]
 43.202.3.204
 3.35.53.127
-3.38.100.160
-3.36.87.178
 
-# if worker node has nvidia gpu, add ip addresses here once more
 [nvidia_workers]         
 3.38.100.160
 3.36.87.178
