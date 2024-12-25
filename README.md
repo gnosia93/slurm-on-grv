@@ -18,7 +18,7 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 * [4. graviton performance] 
 
 
-* [5. slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.slurm-basic.md)
+* [5. slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/5.slurm-basic.md)
 
 * [6. slurm cluster monitoring]
    - https://github.com/vpenso/prometheus-slurm-exporter
