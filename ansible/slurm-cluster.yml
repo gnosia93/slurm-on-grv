@@ -155,6 +155,7 @@
     - name: enable slurmctld service
       shell: |
         sudo systemctl enable slurmctld
+        sudo systemctl stop slurmctld
         sudo systemctl start slurmctld 
 
 - name: slurmd service
@@ -168,6 +169,7 @@
     - name: enable slurmd service
       shell: |
         sudo systemctl enable slurmd
+        sudo systemctl stop slurmd
         sudo systemctl start slurmd 
 
 
