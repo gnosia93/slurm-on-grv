@@ -73,7 +73,7 @@ module "slc-wg" {
   for_each = toset(["wg1", "wg2"])
   name = "slc-${each.key}"
 
-  instance_type          = "c7g.4xlarge"
+  instance_type          = "c7g.2xlarge"
   ami                    = data.aws_ami.ubuntu-arm.id
   key_name               = var.key_pair
   monitoring             = true
