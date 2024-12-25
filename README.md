@@ -13,8 +13,7 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 * [2. attach jupyter notebook](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.attach-jupyter.md)
 
-* [3. distributed training]
-  * [Multi-node-training on slurm with PyTorch](https://gist.github.com/TengdaHan/1dd10d335c7ca6f13810fff41e809904)
+* [3. distributed training](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
 
 * [4. graviton performance] 
 
