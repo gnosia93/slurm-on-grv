@@ -48,7 +48,7 @@
           state: started
 
 - name: install munge and slurmd in workers
-  hosts: workers
+  hosts: gravition_workers nvidia_workers
   become: yes
   tasks:
       - name: install
@@ -73,7 +73,7 @@
           state: started
 
 - name: create /var/spool/slurm directory
-  hosts: master workers
+  hosts: master gravition_workers nvidia_workers
   become: yes
   tasks:
       - ansible.builtin.file:
