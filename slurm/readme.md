@@ -180,7 +180,7 @@ Vist https://pytorch.org/get-started/locally/ and select options
 ```
 conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
 ```
-
+cuda 12.4 is chosen, Therefore, when you run nvcc -V, you should get 12.4.
 
 
 ## 2. Install From Source ##
