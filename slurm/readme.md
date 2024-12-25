@@ -175,8 +175,8 @@ ldconfig -p | grep libnvidia-ml.so
 
 #### [1-6-4 install pytorch](https://freddiekim.tistory.com/m/6) ####
 
-Vist https://pytorch.org/get-started/locally/
-
+Vist https://pytorch.org/get-started/locally/ and select options
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/pytorch-1.png)
 ```
 conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
 ```
