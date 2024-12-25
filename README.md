@@ -11,23 +11,23 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 * [1. slurm cluster provison](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/1.provison.md)
 
-* [2. cuda ]()
+* [2. install pytorch with cuda toolkit]()
 
 
-* [2. attach jupyter notebook](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.attach-jupyter.md)
+* [3. attach jupyter notebook](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.attach-jupyter.md)
 
-* [3. distributed training](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
+* [4. distributed training](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
 
-* [4. graviton performance] 
+* [5. graviton performance] 
 
 
-* [5. slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/5.slurm-basic.md)
+* [6. slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/5.slurm-basic.md)
 
-* [6. slurm cluster monitoring]
+* [7. slurm cluster monitoring]
    - https://github.com/vpenso/prometheus-slurm-exporter
    - https://grafana.com/grafana/dashboards/4323-slurm-dashboard/
 
-* [7. training with Amazon EC2 Trn2]
+* [8. training with Amazon EC2 Trn2]
 
 
 
