@@ -74,19 +74,22 @@
           sudo chmod 777 /var/spool/slurm
           sudo systemctl stop munge
           sudo systemctl start munge
-      - name: install nvidia-driver
-        hosts: slc-wn1 slc-wn2
-        ansible.builtin.apt:
-          pkg:
-            - nvidia-driver-565
-            - nvidia-cuda-toolkit
-            - nvidia-utils-565
-          state: present
       - name: enable service
         ansible.builtin.systemd_service:
           name: munge
           enabled: true
           state: started
+
+- name: install nvidia-driver
+  hosts: slc-wn1 slc-wn2
+  become: yes
+  ansible.builtin.apt:
+    pkg:
+      - nvidia-driver-565
+      - nvidia-cuda-toolkit
+      - nvidia-utils-565
+    state: present
+
 
 - name: install munge and slurmd in client
   hosts: client 
