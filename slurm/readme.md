@@ -177,9 +177,7 @@ ldconfig -p | grep libnvidia-ml.so
 
 * Vist https://pytorch.org/get-started/locally/ and select options
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/pytorch-1.png)
-```
-conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
-```
+
 cuda 12.4 is chosen, Therefore, when you run nvcc -V, you should get 12.4.
 
 * Visit https://developer.nvidia.com/cuda-toolkit-archive
