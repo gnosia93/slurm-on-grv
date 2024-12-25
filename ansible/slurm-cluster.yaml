@@ -43,8 +43,8 @@
           enabled: true
           state: started
 
-- name: install munge and slurmd in client and workers
-  hosts: client workers
+- name: install munge and slurmd in workers
+  hosts: workers
   become: yes
   tasks:
       - name: install
@@ -56,7 +56,32 @@
           state: present
       - name: copy mungekey from master
         shell: |
-          sudo cp /mnt/efsmunge.key /etc/munge/munge.key   
+          sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
+          sudo chown munge:munge /etc/munge/munge.key          
+          sudo chmod 400 /etc/munge/munge.key
+          sudo mkdir /var/spool/slurm                  
+          sudo chown slurm:slurm /var/spool/slurm 
+          sudo chmod 777 /var/spool/slurm
+      - name: enable service
+        ansible.builtin.systemd_service:
+          name: munge
+          enabled: true
+          state: started
+
+- name: install munge and slurmd in client
+  hosts: client 
+  become: yes
+  tasks:
+      - name: install
+        ansible.builtin.apt:
+          pkg:
+          - munge 
+          - libmunge-dev 
+          - slurm-client
+          state: present
+      - name: copy mungekey from master
+        shell: |
+          sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
           sudo mkdir /var/spool/slurm                  
