@@ -183,11 +183,15 @@ cuda 12.4 is chosen, Therefore, when you run nvcc -V, you should get 12.4.
 * Visit https://developer.nvidia.com/cuda-toolkit-archive
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/cuda-toolkit-1.png)
+
+and select nvidia cuda toolkit options
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/cuda-toolkit-2.png)
 
 for the prompts, say always 'yes'
 ```
 sudo apt-get -y install cuda-toolkit-12-4
+
+nvcc -V
 ```
 
 * install pytorch framework
