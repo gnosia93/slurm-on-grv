@@ -84,8 +84,7 @@
   hosts: nvidia-workers
   become: yes
   tasks:
-    - name: add apt repo 
-      shell: |
+    - shell: |
         sudo add-apt-repository ppa:graphics-drivers/ppa --yes
         sudo apt update  
     - ansible.builtin.apt:
@@ -94,8 +93,7 @@
           - nvidia-cuda-toolkit
           - nvidia-utils-565
         state: present
-    - name: execute nvidia-smi
-      shell:
+    - shell:
         sudo nvidia-smi
 
 - name: install munge and slurmd in client
