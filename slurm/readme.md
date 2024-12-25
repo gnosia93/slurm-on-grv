@@ -96,8 +96,8 @@ ConstrainDevices=yes
 * must exist in worker nodes having GPU
 ```
 #AutoDetect=nvml
-NodeName=slx-w1 Name=gpu File=/dev/nvidia0
-NodeName=slx-w2 Name=gpu File=/dev/nvidia0
+NodeName=slc-wn1 Name=gpu File=/dev/nvidia0
+NodeName=slc-wn2 Name=gpu File=/dev/nvidia0
 ```
 In the Linux /dev directory, an Nvidia device will typically be named something like /dev/nvidia0, /dev/nvidia1, or similar, depending on the number of Nvidia GPUs present in the system; essentially, any file starting with "nvidia" within the /dev directory indicates an Nvidia device
 
