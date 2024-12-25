@@ -21,7 +21,6 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
    - https://github.com/vpenso/prometheus-slurm-exporter
    - https://grafana.com/grafana/dashboards/4323-slurm-dashboard/
 
-* [6. training with Amazon EC2 Trn2]
 
 
 ## Appendix ##
@@ -29,6 +28,8 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 * [enable pytorch with cuda toolkit](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.cuda-toolkit.md)
 
 * [slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/5.slurm-basic.md)
+
+* [training with Amazon EC2 Trn2]
 
 
 
