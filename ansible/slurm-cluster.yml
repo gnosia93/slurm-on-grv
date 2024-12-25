@@ -62,6 +62,20 @@
           sudo mkdir /var/spool/slurm                  
           sudo chown slurm:slurm /var/spool/slurm 
           sudo chmod 777 /var/spool/slurm
+
+          cat <_EOF >> /home/ubuntu/nvidia.sh
+          #!/usr/bin/bash
+          if [[ `hostname` =~ slc-wn[0-9]* ]]; then
+              sudo add-apt-repository ppa:graphics-drivers/ppa --yes
+              sudo apt update
+              sudo apt install -y nvidia-driver-565
+              sudo apt install -y nvidia-cuda-toolkit
+              sudo apt install -y nvidia-utils-565
+          fi
+          _EOF
+
+          
+          
       - name: enable service
         ansible.builtin.systemd_service:
           name: munge
