@@ -86,14 +86,15 @@
   tasks:
     - shell: |
         sudo add-apt-repository ppa:graphics-drivers/ppa --yes
-        sudo apt update
+        sudo apt update  
     - ansible.builtin.apt:
         pkg:
           - nvidia-driver-565
           - nvidia-cuda-toolkit
           - nvidia-utils-565
         state: present
-
+     - shell: |
+       sudo nvidia-smi
 
 - name: install munge and slurmd in client
   hosts: client 
