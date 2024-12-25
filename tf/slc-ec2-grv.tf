@@ -104,11 +104,11 @@ module "slc-wg" {
 
 
 output "master" {
-  value = module.slc-mst.instnace[0].public_ip
+  value = module.slc-mst.instance[0].public_ip
 }
 
 output "client" {
-  value = module.slc-mst.instnace[1].public_ip
+  value = module.slc-mst.instance[1].public_ip
 }
 
 output "graviton-workers" {
