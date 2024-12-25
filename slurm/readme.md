@@ -184,6 +184,7 @@ cuda 12.4 is chosen, Therefore, when you run nvcc -V, you should get 12.4.
 
 * Visit https://developer.nvidia.com/cuda-toolkit-archive
 
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/cuda-toolkit.png)
 
 
 
