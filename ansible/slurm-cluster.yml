@@ -83,12 +83,13 @@
 - name: install nvidia-driver
   hosts: slc-wn1 slc-wn2
   become: yes
-  ansible.builtin.apt:
-    pkg:
-      - nvidia-driver-565
-      - nvidia-cuda-toolkit
-      - nvidia-utils-565
-    state: present
+  tasks:
+    - ansible.builtin.apt:
+        pkg:
+          - nvidia-driver-565
+          - nvidia-cuda-toolkit
+          - nvidia-utils-565
+        state: present
 
 
 - name: install munge and slurmd in client
