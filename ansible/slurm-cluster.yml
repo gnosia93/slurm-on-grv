@@ -59,10 +59,9 @@
           sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
-          sudo mkdir /var/spool/slurm                  
+          if [[ ! -d /var/spool/slurm ]] ; then     sudo mkdir /var/spool/slurm; fi                     
           sudo chown slurm:slurm /var/spool/slurm 
           sudo chmod 777 /var/spool/slurm
-          cat <<_EOF > /home/ubuntu/nvidia.sh && bash /home/ubuntu/nvidia.sh
           #!/usr/bin/bash
           if [[ `hostname` =~ slc-wn[0-9]* ]]; then
             sudo add-apt-repository ppa:graphics-drivers/ppa --yes
@@ -71,7 +70,6 @@
             sudo apt install -y nvidia-cuda-toolkit
             sudo apt install -y nvidia-utils-565
           fi
-          _EOF          
       - name: enable service
         ansible.builtin.systemd_service:
           name: munge
