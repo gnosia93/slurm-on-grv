@@ -1,0 +1,174 @@
+
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - debug:
+        msg: "{{ ansible_hostname }}:{{ ansible_default_ipv4.address }}"
+    - debug:
+        msg: "/mnt/efs is mounted"
+      when: ansible_mounts | selectattr('mount', 'equalto', '/mnt/efs') | list | length > 0
+
+        
+- name: gather cluster node information and update /etc/hosts of each node
+  hosts: all
+  tasks:
+  - name: update /etc/hosts
+    become: yes
+    blockinfile:
+      backup: yes
+      path: /etc/hosts
+      block: |
+        {% for host in groups['all'] %} 
+        {{ hostvars[host]['ansible_facts']['ens5']['ipv4']['address'] }} {{ hostvars[host]['ansible_facts']['hostname'] }} 
+        {% endfor %}
+
+- name: install munge and slurmctld in master
+  hosts: master
+  become: yes
+  tasks:
+      - name: install at master
+        ansible.builtin.apt:
+          pkg:
+          - munge 
+          - libmunge-dev 
+          - slurm-wlm 
+          state: present
+      - name: make mungekey at master
+        shell: |
+          sudo /usr/sbin/mungekey                              
+          sudo cp /etc/munge/munge.key /mnt/efs  
+          sudo chown munge:munge /etc/munge/munge.key          
+          sudo chmod 400 /etc/munge/munge.key
+          sudo systemctl stop munge
+          sudo systemctl start munge
+      - name: enable service at master
+        ansible.builtin.systemd_service:
+          name: munge
+          enabled: true
+          state: started
+
+- name: install munge and slurmd in workers
+  hosts: graviton_workers nvidia_workers
+  become: yes
+  tasks:
+      - name: install at workers
+        ansible.builtin.apt:
+          pkg:
+          - munge 
+          - libmunge-dev 
+          - slurmd
+          state: present
+      - name: copy mungekey from master at workers
+        shell: |
+          sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
+          sudo chown munge:munge /etc/munge/munge.key          
+          sudo chmod 400 /etc/munge/munge.key
+          sudo systemctl stop munge
+          sudo systemctl start munge
+      - name: enable service at workers
+        ansible.builtin.systemd_service:
+          name: munge
+          enabled: true
+          state: started
+
+- name: create /var/spool/slurm directory
+  hosts: master graviton_workers nvidia_workers
+  become: yes
+  tasks:
+      - ansible.builtin.file:
+          path: /var/spool/slurm
+          state: directory
+          owner: slurm
+          group: slurm
+          mode: '0777'
+
+- name: install nvidia-driver
+  hosts: nvidia_workers
+  become: yes
+  tasks:
+    - shell: |
+        sudo add-apt-repository ppa:graphics-drivers/ppa --yes
+        sudo apt update  
+    - ansible.builtin.apt:
+        pkg:
+          - nvidia-driver-565
+          - nvidia-cuda-toolkit
+          - nvidia-utils-565
+        state: present
+    - shell:
+        sudo nvidia-smi
+
+- name: install munge and slurmd in client
+  hosts: client 
+  become: yes
+  tasks:
+      - name: install
+        ansible.builtin.apt:
+          pkg:
+          - munge 
+          - libmunge-dev 
+          - slurm-client
+          state: present
+      - name: copy mungekey from master
+        shell: |
+          sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
+          sudo chown munge:munge /etc/munge/munge.key          
+          sudo chmod 400 /etc/munge/munge.key
+          sudo mkdir /var/spool/slurm                  
+          sudo chown slurm:slurm /var/spool/slurm 
+          sudo chmod 777 /var/spool/slurm
+          sudo systemctl stop munge
+          sudo systemctl start munge
+      - name: enable service
+        ansible.builtin.systemd_service:
+          name: munge
+          enabled: true
+          state: started
+
+- name: copy configuration to slurm cluster
+  hosts: all
+  become: yes
+  tasks:
+    - name: copy slurm.conf
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/slurm.conf
+        dest: /etc/slurm
+    - name: copy cgroup.conf
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/cgroup.conf
+        dest: /etc/slurm    
+    - name: copy gres.conf
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/gres.conf
+        dest: /etc/slurm
+
+- name: slurmctld service
+  hosts: master 
+  become: yes
+  tasks:
+    - name: copy slurmctld.service
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/slurmctld.service
+        dest: /lib/systemd/system
+    - name: enable slurmctld service
+      systemd_service:
+          name: slurmctld
+          enabled: true
+          state: started
+
+- name: slurmd service
+  hosts: graviton_workers nvidia_workers
+  become: yes
+  tasks:
+    - name: copy slurmd.service
+      copy:
+        src: ~/slurm-on-grv/slurm/conf/slurmd.service
+        dest: /lib/systemd/system
+    - name: enable slurmd service
+      systemd_service:
+          name: slurmd
+          enabled: true
+          state: started
+
+
+          
