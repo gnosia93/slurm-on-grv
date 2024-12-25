@@ -151,7 +151,7 @@
     - name: copy slurmctld.service
       copy:
         src: ~/slurm-on-grv/slurm/conf/slurmctld.service
-        dest: /etc/slurm
+        dest: /lib/systemd/system
   
 - name: slurmd service
   hosts: gravition_workers nvidia_workers
@@ -160,7 +160,7 @@
     - name: copy slurmd.service
       copy:
         src: ~/slurm-on-grv/slurm/conf/slurmd.service
-        dest: /etc/slurm
+        dest: /lib/systemd/system
 
 
 
