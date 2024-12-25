@@ -11,7 +11,7 @@ User=root
 Group=root
 ExecStart=/usr/sbin/slurmctld
 # ExecReload=/bin/kill -HUP $MAINPID
-PIDFile=/var/run/slurmctld.pid
+PIDFile=/var/log/slurm/slurmctld.pid
 Restart=on-failure 
 
 [Install]
