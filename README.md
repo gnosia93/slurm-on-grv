@@ -13,10 +13,7 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 * [2. install pytorch with cuda toolkit]()
 
-
-* [3. attach jupyter notebook](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.attach-jupyter.md)
-
-* [4. distributed training](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
+* [3. distributed training](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
 
 * [5. graviton performance] 
 
@@ -29,6 +26,7 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 * [8. training with Amazon EC2 Trn2]
 
+* [3. attach jupyter notebook](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.attach-jupyter.md)
 
 
 
