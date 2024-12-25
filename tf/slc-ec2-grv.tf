@@ -102,8 +102,6 @@ module "slc-wg" {
   }
 }
 
-values
-
 output "master" {
   value = values(module.slc-mst)[0].public_ip
 }
