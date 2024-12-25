@@ -153,11 +153,10 @@
         src: ~/slurm-on-grv/slurm/conf/slurmctld.service
         dest: /lib/systemd/system
     - name: enable slurmctld service
-      ansible.builtin.systemd_service:
-          name: slurmctld
-          enabled: true
-          state: started
-    
+      shell: |
+        sudo systemctl enable slurmctld
+        sudo systemctl start slurmctld 
+
 - name: slurmd service
   hosts: gravition_workers nvidia_workers
   become: yes
@@ -167,11 +166,9 @@
         src: ~/slurm-on-grv/slurm/conf/slurmd.service
         dest: /lib/systemd/system
     - name: enable slurmd service
-      ansible.builtin.systemd_service:
-          name: slurmd
-          enabled: true
-          state: started
-
+      shell: |
+        sudo systemctl enable slurmd
+        sudo systemctl start slurmd 
 
 
           
