@@ -76,8 +76,8 @@ NodeName=slc-wg[1-2] CPUs=4 Boards=1 SocketsPerBoard=1 CoresPerSocket=4 ThreadsP
 GresTypes=gpu
 NodeName=slc-wn[1-2] Gres=gpu:1 CPUs=4 Boards=1 SocketsPerBoard=1 CoresPerSocket=4 ThreadsPerCore=1 RealMemory=7763     # slurmd -C in worker node
 
-PartitionName=graviton Nodes=sle-wg[1-2] Default=YES MaxTime=INFINITE State=UP
-PartitionName=nvidia Nodes=slx-wn[1-2] Default=YES MaxTime=INFINITE State=UP
+PartitionName=graviton Nodes=slc-wg[1-2] Default=YES MaxTime=INFINITE State=UP
+PartitionName=nvidia Nodes=slc-wn[1-2] Default=YES MaxTime=INFINITE State=UP
 ```
 Type slurmd -C at worker node to retrieve hardware spec for `NodeName` in slurm.conf.
 
