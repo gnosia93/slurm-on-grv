@@ -61,6 +61,7 @@
           state: present
       - name: copy mungekey from master
         shell: |
+          sudo rm -rf /etc/munge/munge.key
           sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
@@ -94,6 +95,7 @@
           state: present
       - name: copy mungekey from master
         shell: |
+          sudo rm -rf /etc/munge/munge.key
           sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
