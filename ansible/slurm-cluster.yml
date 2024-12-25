@@ -25,14 +25,14 @@
   hosts: master
   become: yes
   tasks:
-      - name: install
+      - name: install at master
         ansible.builtin.apt:
           pkg:
           - munge 
           - libmunge-dev 
           - slurm-wlm 
           state: present
-      - name: make mungekey
+      - name: make mungekey at master
         shell: |
           sudo rm -rf /etc/munge/munge.key
           sudo /usr/sbin/mungekey                              
@@ -41,7 +41,7 @@
           sudo chmod 400 /etc/munge/munge.key
           sudo systemctl stop munge
           sudo systemctl start munge
-      - name: enable service
+      - name: enable service at master
         ansible.builtin.systemd_service:
           name: munge
           enabled: true
@@ -51,14 +51,14 @@
   hosts: gravition_workers nvidia_workers
   become: yes
   tasks:
-      - name: install
+      - name: install at workers
         ansible.builtin.apt:
           pkg:
           - munge 
           - libmunge-dev 
           - slurmd
           state: present
-      - name: copy mungekey from master
+      - name: copy mungekey from master at workers
         shell: |
           sudo rm -rf /etc/munge/munge.key
           sudo cp /mnt/efs/munge.key /etc/munge/munge.key   
@@ -66,7 +66,7 @@
           sudo chmod 400 /etc/munge/munge.key
           sudo systemctl stop munge
           sudo systemctl start munge
-      - name: enable service
+      - name: enable service at workers
         ansible.builtin.systemd_service:
           name: munge
           enabled: true
