@@ -42,6 +42,8 @@
           sudo mkdir /var/spool/slurm                  
           sudo chown slurm:slurm /var/spool/slurm 
           sudo chmod 777 /var/spool/slurm
+          sudo systemctl munge stop
+          sudo systemctl munge start
       - name: enable service
         ansible.builtin.systemd_service:
           name: munge
@@ -76,6 +78,8 @@
             sudo apt install -y nvidia-cuda-toolkit
             sudo apt install -y nvidia-utils-565
           fi
+          sudo systemctl munge stop
+          sudo systemctl munge start
       - name: enable service
         ansible.builtin.systemd_service:
           name: munge
@@ -102,6 +106,8 @@
           sudo mkdir /var/spool/slurm                  
           sudo chown slurm:slurm /var/spool/slurm 
           sudo chmod 777 /var/spool/slurm
+          sudo systemctl munge stop
+          sudo systemctl munge start
       - name: enable service
         ansible.builtin.systemd_service:
           name: munge
