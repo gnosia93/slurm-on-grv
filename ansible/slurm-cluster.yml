@@ -153,7 +153,7 @@
         src: ~/slurm-on-grv/slurm/conf/slurmctld.service
         dest: /lib/systemd/system
     - name: enable slurmctld service
-        ansible.builtin.systemd_service:
+      ansible.builtin.systemd_service:
           name: slurmctld
           enabled: true
           state: started
@@ -167,7 +167,7 @@
         src: ~/slurm-on-grv/slurm/conf/slurmd.service
         dest: /lib/systemd/system
     - name: enable slurmd service
-        ansible.builtin.systemd_service:
+      ansible.builtin.systemd_service:
           name: slurmd
           enabled: true
           state: started
