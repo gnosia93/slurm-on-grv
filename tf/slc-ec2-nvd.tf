@@ -49,9 +49,6 @@ module "slc-wn" {
   }
 }
 
-output "nvidia-workers" {
-  value = [for instance in module.slc-wn : instance.public_ip]
-}
 
 
 
