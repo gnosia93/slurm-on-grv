@@ -42,7 +42,7 @@ sudo chmod 777 /var/spool/slurm
 
 **[/etc/slurm/slurm.conf]**
 ```
-ControlMachine=sl-mst                      # hostname of master node
+ControlMachine=slc-mst                      # hostname of master node
 AuthType=auth/munge                        # authentification with munge
 SlurmdPort=6818                            # slurm daemon port
 SlurmctldPort=6817                         # slurm controller daemon port 
