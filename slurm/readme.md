@@ -173,7 +173,7 @@ ldconfig -p | grep libnvidia-ml.so
 
 * add gpu info into slurm.conf and gres.conf, see upper configuration (at 1-3. make configuration at all nodes)
 
-#### 1-6-4 install pytorch ####
+#### [1-6-4 install pytorch](https://freddiekim.tistory.com/m/6) ####
 
 
 
