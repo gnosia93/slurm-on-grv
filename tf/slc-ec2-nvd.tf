@@ -21,8 +21,8 @@ module "slc-wn" {
   name = "slc-${each.key}"
 
   instance_type          = "g5g.xlarge"
- # ami                    = data.aws_ami.ubuntu-arm64-nvidia.id
-  ami                    = data.aws_ami.ubuntu-arm.id
+  ami                    = data.aws_ami.ubuntu-arm64-nvidia.id
+#  ami                    = data.aws_ami.ubuntu-arm.id
   key_name               = var.key_pair
   monitoring             = true
   vpc_security_group_ids = [module.ec2_sg.security_group_id]
