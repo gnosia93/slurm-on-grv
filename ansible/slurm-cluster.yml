@@ -39,6 +39,7 @@
           sudo cp /etc/munge/munge.key /mnt/efs  
           sudo chown munge:munge /etc/munge/munge.key          
           sudo chmod 400 /etc/munge/munge.key
+          
           if [[ ! -d /var/spool/slurm ]] ; then     sudo mkdir /var/spool/slurm; fi                     
           sudo chown slurm:slurm /var/spool/slurm 
           sudo chmod 777 /var/spool/slurm
