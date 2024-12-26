@@ -4,7 +4,8 @@ data "aws_ami" "ubuntu-arm64-nvidia" {
 
   filter {
     name   = "name"
-    values = ["Deep Learning ARM64 Base OSS Nvidia Driver GPU AMI (Ubuntu 22.04)*"]
+#    values = ["Deep Learning ARM64 Base OSS Nvidia Driver GPU AMI (Ubuntu 22.04)*"]
+    values = ["Deep Learning ARM64 AMI OSS Nvidia Driver GPU PyTorch 2.4.0 (Ubuntu 22.04)*"] 
   }
 
   filter {
