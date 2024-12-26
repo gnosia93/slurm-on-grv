@@ -17,5 +17,5 @@ output "nvidia-workers" {
 
 output "monitoring" {
   value = ["prometheus url: ${module.slc-mon["prometheus"].public_dns}:8080", 
-           "private dns: ${module.slc-mon["prometheus"].private_dns}"]
+           "grafana url: ${module.slc-mon["prometheus"].public_dns}:8081"]
 }
