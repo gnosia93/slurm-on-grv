@@ -12,6 +12,16 @@
 
 * https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/solutions/resources/documents1/Datasheet_NVIDIA_T4_Virtualization.pdf
 
+## re-run EC2 userdata from the console ##
+* https://stackoverflow.com/questions/46256141/how-can-i-re-run-user-data-on-aws-ec2-from-the-console
+```
+curl http://instance-data/latest/user-data > user-data.sh
+chmod u+x user-data.sh
+sudo ./user-data.sh
+```
+
+
+
 ## Modify EC2 hostname ##
 * https://www.cyberciti.biz/faq/set-change-hostname-in-amazon-linux-ec2-instance-server/
 * https://stackoverflow.com/questions/9591744/how-to-add-to-the-end-of-lines-containing-a-pattern-with-sed-or-awk
