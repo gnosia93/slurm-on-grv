@@ -1,6 +1,6 @@
 # slurm-on-grv
 
-![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/slurm-ws-arch.png)
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/slurm-ws-arch-1.png)
 
 **This workshop explains about how to use AWS graviton EC2 instances for pytorch distributed training with slurm.** 
 AWS Graviton processors are custom-built by AWS to deliver the best price performance for cloud workloads. Graviton-based instance is upto 20% more cheaper than X86-based and provide better performance in same generation. AWS Graviton3 optimized for ML workloads and provide the `Single Instruction Multiple Data (SIMD)` while also supporting `bfloat16`. 
