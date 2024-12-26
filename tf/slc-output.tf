@@ -16,5 +16,5 @@ output "nvidia-workers" {
 }
 
 output "prometheus" {
-  value = module.slc-mon["prometheus"].public_dns
+  value = [module.slc-mon["prometheus"].public_dns, module.slc-mon["prometheus"].public_ip]
 }
