@@ -14,3 +14,7 @@ output "graviton-workers" {
 output "nvidia-workers" {
   value = [for instance in module.slc-wn : instance.public_ip]
 }
+
+output "prometheus" {
+  value = module.slc-mon[0].public_dns
+}
