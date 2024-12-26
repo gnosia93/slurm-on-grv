@@ -6,6 +6,12 @@
 ## Get your IP ##
 * https://whatismyipaddress.com/#google_vignette
 
+## Amazon EC2 T4G ##
+
+
+
+
+
 ## Modify EC2 hostname ##
 * https://www.cyberciti.biz/faq/set-change-hostname-in-amazon-linux-ec2-instance-server/
 * https://stackoverflow.com/questions/9591744/how-to-add-to-the-end-of-lines-containing-a-pattern-with-sed-or-awk
