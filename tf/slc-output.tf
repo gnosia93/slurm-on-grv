@@ -15,7 +15,7 @@ output "nvidia-workers" {
   value = [for instance in module.slc-wn : instance.public_ip]
 }
 
-output "monitoring" {
+output "prometheus" {
   value = ["prometheus url: ${module.slc-mon["prometheus"].public_dns}:8080", 
            "grafana url: ${module.slc-mon["prometheus"].public_dns}:8081"]
 }
