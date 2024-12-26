@@ -16,5 +16,5 @@ output "nvidia-workers" {
 }
 
 output "prometheus" {
-  value = ["dns" + module.slc-mon["prometheus"].public_dns, module.slc-mon["prometheus"].private_dns]
+  value = ["public dns: ${module.slc-mon["prometheus"].public_dns}", module.slc-mon["prometheus"].private_dns]
 }
