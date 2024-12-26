@@ -8,7 +8,7 @@
 
 ## Amazon EC2 T4G ##
 
-
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/ec2-t4g-1.png)
 
 
 
