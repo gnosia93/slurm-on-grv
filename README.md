@@ -27,7 +27,7 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 * [A1. pytorch with cuda toolkit](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/a1.cuda-toolkit.md)
 
-* [A2. slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/5.slurm-basic.md)
+* [A2. slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/a2.slurm-basic.md)
 
 * [A3. training with Amazon EC2 Trn2]
 
