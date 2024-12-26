@@ -27,7 +27,7 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 
 ## Revision History ##
-* 2024-12-27 draft version released
+* 2024-12-27 draft version is released
 
 
 
