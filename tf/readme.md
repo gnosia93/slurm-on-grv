@@ -10,7 +10,7 @@
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/ec2-t4g-1.png)
 
-
+* https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/solutions/resources/documents1/Datasheet_NVIDIA_T4_Virtualization.pdf
 
 ## Modify EC2 hostname ##
 * https://www.cyberciti.biz/faq/set-change-hostname-in-amazon-linux-ec2-instance-server/
