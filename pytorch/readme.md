@@ -11,6 +11,7 @@
 
 * https://github.com/huggingface/transformers/tree/main/examples/pytorch
 * https://huggingface.co/docs/transformers/en/index
+* https://stackoverflow.com/questions/75814047/how-to-use-huggingface-trainer-with-multiple-gpus
 
 
 ## reference ##
