@@ -1,4 +1,4 @@
-## Tutorials ##
+## DDP ##
 
 * [#1. PyTorch Distributed Overview](https://pytorch.org/tutorials/beginner/dist_overview.html)
 * [#2. Distributed Data Parallel](https://pytorch.org/docs/stable/notes/ddp.html)     
