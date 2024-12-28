@@ -10,7 +10,7 @@
 ## HuggingFace ##
 
 * https://github.com/huggingface/transformers/tree/main/examples/pytorch
-
+* https://huggingface.co/docs/transformers/en/index
 
 
 ## reference ##
