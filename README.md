@@ -15,7 +15,7 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 * [3. distributed training](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
 
-* [4. open-mpi](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/4.open-mpi.md)
+* [4. open-mpi](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/4.open-mpi.md)(p)
 
 * [5. cluster monitoring](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/5.cluster-monitoring.md)
   
