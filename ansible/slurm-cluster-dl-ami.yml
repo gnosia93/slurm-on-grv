@@ -57,6 +57,7 @@
           - munge 
           - libmunge-dev 
           - slurmd
+          - slurm-client
           state: present
       - name: copy mungekey from master at workers
         shell: |
