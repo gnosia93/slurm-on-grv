@@ -27,7 +27,7 @@ We provision AWS infrastructure with terraform and configure slurm cluster with 
 * [a3. lustre file system](https://tech.gluesys.com/blog/2022/07/22/lustre_GPU_Direct_Storage.html)
 
 ## Revision History ##
-* 2024-12-27 draft version is released
+* 2024-12-27 draft version released
 
 
 
