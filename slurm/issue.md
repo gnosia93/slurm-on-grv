@@ -1,9 +1,11 @@
 ## ValueError: Error initializing torch.distributed using env:// rendezvous: environment variable RANK expected, but not set ##
 
-https://www.google.co.kr/search?q=slurm+batch+variable+RANK+expected%2C+but+not+set&sca_esv=efe6d24389f8b041&sxsrf=ADLYWIIxa2DXEFeRWPyi_JPVJNSemwUurA%3A1735833988348&source=hp&ei=hLl2Z5bzEvOl2roP5_Tu4A4&iflsig=AL9hbdgAAAAAZ3bHlE0n-Qs8GA0o12GmpwtWb409je8t&ved=0ahUKEwiWxYzCtdeKAxXzklYBHWe6G-wQ4dUDCBk&uact=5&oq=slurm+batch+variable+RANK+expected%2C+but+not+set&gs_lp=Egdnd3Mtd2l6Ii9zbHVybSBiYXRjaCB2YXJpYWJsZSBSQU5LIGV4cGVjdGVkLCBidXQgbm90IHNldDIIEAAYogQYiQUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESOQTULoCWJoQcAF4AJABAJgBrAGgAdYLqgEEMC4xM7gBA8gBAPgBAfgBApgCDqACgAyoAgHCAgYQswEYhQTCAg0QLhiABBjRAxjHARgKwgILEAAYgAQYsQMYgwHCAhEQLhiABBixAxjRAxiDARjHAcICCBAAGIAEGLEDwgIEEAAYA8ICDhAuGIAEGLEDGNEDGMcBwgIFEAAYgATCAgUQLhiABMICBBAAGB6YAwTxBXgb7bj6DA-ukgcEMS4xM6AHw0c&sclient=gws-wiz
+[solution link](https://www.google.co.kr/search?q=slurm+batch+variable+RANK+expected%2C+but+not+set&sca_esv=efe6d24389f8b041&sxsrf=ADLYWIIxa2DXEFeRWPyi_JPVJNSemwUurA%3A1735833988348&source=hp&ei=hLl2Z5bzEvOl2roP5_Tu4A4&iflsig=AL9hbdgAAAAAZ3bHlE0n-Qs8GA0o12GmpwtWb409je8t&ved=0ahUKEwiWxYzCtdeKAxXzklYBHWe6G-wQ4dUDCBk&uact=5&oq=slurm+batch+variable+RANK+expected%2C+but+not+set&gs_lp=Egdnd3Mtd2l6Ii9zbHVybSBiYXRjaCB2YXJpYWJsZSBSQU5LIGV4cGVjdGVkLCBidXQgbm90IHNldDIIEAAYogQYiQUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESOQTULoCWJoQcAF4AJABAJgBrAGgAdYLqgEEMC4xM7gBA8gBAPgBAfgBApgCDqACgAyoAgHCAgYQswEYhQTCAg0QLhiABBjRAxjHARgKwgILEAAYgAQYsQMYgwHCAhEQLhiABBixAxjRAxiDARjHAcICCBAAGIAEGLEDwgIEEAAYA8ICDhAuGIAEGLEDGNEDGMcBwgIFEAAYgATCAgUQLhiABMICBBAAGB6YAwTxBXgb7bj6DA-ukgcEMS4xM6AHw0c&sclient=gws-wiz)
 
-
-
+```
+Verify your script:
+Check for "RANK" usage: In your script, make sure you're accessing the "RANK" variable correctly within your distributed code (e.g., using os.environ['SLURM_PROCID'] to retrieve the rank).
+```
 ## Failed to initialize NVML: Driver/library version mismatch NVML library version: 565.77 ##
 
 reboot 
