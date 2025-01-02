@@ -37,7 +37,7 @@ def setup():
     if 'SLURM_PROCID' in os.environ:     # for slurm scheduler
         global_rank = int(os.environ['SLURM_PROCID'])
         dist.init_process_group("nccl", rank=global_rank)
-    else:
+    else:                                # for torchrun
         dist.init_process_group("nccl")
 
 def cleanup():
@@ -59,7 +59,7 @@ def load_train_data(batch_size):
     return train_loader, train_sampler 
 
 def train():
-    global_rank = dist.get_rank()
+    global_rank = dist.get_rank()        # for torchrun    
     if 'SLURM_PROCID' in os.environ:     # for slurm scheduler
         global_rank = int(os.environ['SLURM_PROCID'])
 
