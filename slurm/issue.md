@@ -4,7 +4,8 @@
 
 ```
 Verify your script:
-Check for "RANK" usage: In your script, make sure you're accessing the "RANK" variable correctly within your distributed code (e.g., using os.environ['SLURM_PROCID'] to retrieve the rank).
+Check for "RANK" usage: In your script, make sure you're accessing the "RANK" variable
+correctly within your distributed code (e.g., using os.environ['SLURM_PROCID'] to retrieve the rank).
 ```
 ## Failed to initialize NVML: Driver/library version mismatch NVML library version: 565.77 ##
 
