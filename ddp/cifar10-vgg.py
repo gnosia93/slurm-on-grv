@@ -99,5 +99,10 @@ if __name__ == "__main__":
     train()         
     cleanup()
 
-# export MASTER_ADDR=<master ip or dns>
-# OMP_NUM_THREADS=4 torchrun --nnodes=2 --nproc_per_node=1 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 tiny.py          
+# Multi Gpu example    
+# export MASTER_ADDR=localhost
+# OMP_NUM_THREADS=4 torchrun --nnodes=2 --nproc_per_node=1 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 cifar10-vgg.py          
+#
+# Multi Node example    
+# MASTER_ADDR=10.0.101.161 torchrun --nproc_per_node=1 --nnodes=2 --node_rank=0 --master_addr=$MASTER_ADDR --master_port=29400 cifar10-vgg.py
+# MASTER_ADDR=10.0.101.161 torchrun --nproc_per_node=1 --nnodes=2 --node_rank=1 --master_addr=$MASTER_ADDR --master_port=29400 cifar10-vgg.py
