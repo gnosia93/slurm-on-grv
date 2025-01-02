@@ -56,6 +56,9 @@ def load_train_data(batch_size):
 
 def train():
     global_rank = dist.get_rank()
+    if 'SLURM_PROCID' in os.environ:     # for slurm scheduler
+        global_rank = int(os.environ['SLURM_PROCID'])
+
     rank = global_rank % torch.cuda.device_count()       # local rank
     print(f"Running DDP training on global rank {global_rank}, rank {rank}, gpu {torch.cuda.device_count()}")
 
