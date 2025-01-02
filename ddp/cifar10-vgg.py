@@ -3,7 +3,7 @@
     author: soonbeom kwon
     email: gnosia93@naver.com
     revision:
-        1. 2025/01/02 draft version released.
+        1. 2025/01/02 draft version written.
 """
 
 import os
