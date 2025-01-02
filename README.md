@@ -11,11 +11,11 @@ Slurm is an open source, fault-tolerant, and highly scalable cluster management 
 
 * [1. slurm cluster provison](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/1.provison.md)
 
-* [2. attach jupyter notebook](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.attach-jupyter.md)
+* [2. attach jupyter notebook for intractive slurm](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/2.attach-jupyter.md)
 
-* [3. distributed training](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
+* [3. distributed training with gpu nodes](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/3.distributed-training.md)
 
-* [4. open-mpi](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/4.open-mpi.md)(p)
+* [4. open-mpi tutorial](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/4.open-mpi.md)(p)
 
 * [5. cluster monitoring](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/5.cluster-monitoring.md)
   
