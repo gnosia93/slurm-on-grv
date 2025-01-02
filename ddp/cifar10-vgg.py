@@ -34,11 +34,11 @@ def setup():
         dist.init_process_group("nccl" if torch.cuda.is_available() else "gloo", 
                                 rank=rank, world_size=world_size)
     """    
-    global_rank = dist.get_rank()
     if 'SLURM_PROCID' in os.environ:     # for slurm scheduler
         global_rank = int(os.environ['SLURM_PROCID'])
-    
-    dist.init_process_group("nccl", rank=global_rank)
+        dist.init_process_group("nccl", rank=global_rank)
+    else:
+        dist.init_process_group("nccl")
 
 def cleanup():
     dist.destroy_process_group()
