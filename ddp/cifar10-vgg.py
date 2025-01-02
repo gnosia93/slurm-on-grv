@@ -93,4 +93,5 @@ if __name__ == "__main__":
     train()         
     cleanup()
 
-# OMP_NUM_THREADS=4 torchrun --nnodes=1 --nproc_per_node=2 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=localhost:29400 tiny.py          
+# export MASTER_ADDR=<master ip or dns>
+# OMP_NUM_THREADS=4 torchrun --nnodes=2 --nproc_per_node=1 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 tiny.py          
