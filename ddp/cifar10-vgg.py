@@ -62,7 +62,6 @@ def train():
                          momentum=0.9)
     scheduler = StepLR(optimizer, step_size=30, gamma=0.1)          
     train_loader, train_sampler = load_train_data(128)
-    dist.barrier()
     """
     This method is used to sync all the processes and wont allow any process to execute beyond this point. 
     This function is crucial because we may need to share some data between different processes for which we need all of them to be executed. 
