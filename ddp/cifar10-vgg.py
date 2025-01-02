@@ -1,3 +1,11 @@
+"""
+    This script is distributed training example with pytorch DDP.  
+    author: soonbeom kwon
+    email: gnosia93@naver.com
+    revision:
+        1. 2025/01/02 draft version released.
+"""
+
 import os
 import sys
 import tempfile
