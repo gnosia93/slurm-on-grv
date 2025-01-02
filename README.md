@@ -6,6 +6,7 @@
 AWS Graviton processors are custom-built by AWS to deliver the best price performance for cloud workloads. Graviton-based instance is upto 20% more cheaper than X86-based and provide better performance in same generation. AWS Graviton3 optimized for ML workloads and provide the `Single Instruction Multiple Data (SIMD)` while also supporting `bfloat16`. 
 
 Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. 
+We provision AWS infrastructure with terraform and install and configure slurm cluster with ansible. for distributed training, we need NAS filesystem or Lustre Parallel filesystem. In this workshop, we will use efs filesystem as a shared storage.
 
 ## Get Started ##
 
