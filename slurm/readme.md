@@ -1,4 +1,4 @@
-![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/slurm-arch.png_
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/slurm-arch.png)
 
 ## 1. [Install using apt](https://bgreat.tistory.com/185) ##
 
