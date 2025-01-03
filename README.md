@@ -25,7 +25,8 @@ We provision AWS infrastructure with terraform and configure slurm cluster with 
 * [a1. pytorch with cuda toolkit](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/a1.cuda-toolkit.md)
 * [a2. slurm command fundamentals](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/a2.slurm-basic.md)
 * [a3. lustre file system](https://tech.gluesys.com/blog/2022/07/22/lustre_GPU_Direct_Storage.html)
-
+* [a4. arm performance](https://developer.arm.com/Tools%20and%20Software/Arm%20Performance%20Studio)
+  
 ## Revision History ##
 * 2024-12-27 draft version released
 
