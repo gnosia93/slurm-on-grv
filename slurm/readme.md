@@ -1,5 +1,6 @@
-## 1. [Install using apt](https://bgreat.tistory.com/185) ##
+![](https://github.com/gnosia93/slurm-on-grv/blob/main/slurm/images/slurm-arch.png_
 
+## 1. [Install using apt](https://bgreat.tistory.com/185) ##
 
 ### 1-1. append node hostname ###
 FQDN is preferred, but if you are using AWS, you just need to set private IP with hostname.
