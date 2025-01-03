@@ -318,4 +318,4 @@ True
 ## 레퍼런스 ##
 
 * https://blog.liam.kim/posts/2024/05/Slurm-Setup-Guide/
-
+* https://www.unitary.ai/articles/intro-to-multi-node-machine-learning-2-using-slurm
