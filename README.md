@@ -1,4 +1,4 @@
-# slurm-on-aws
+# slurm-on-ec2
 
 ![](https://github.com/gnosia93/slurm-on-grv/blob/main/tutorial/images/slurm-ws-arch-2.png)
 
